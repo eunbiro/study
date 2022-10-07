@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- input은 무조건 form안에 넣기 (안에 있어야 submit이 작동함)
+       input과 label은 짝꿍
+       input type은 명시적으로 맞는 것을 넣는 것이 좋음 -->
+       <label for="user-name">이름 </label>
+       <input type="text" id="user-name">
+       <label for="phone">연락처</label>
+       <input type="tel" id="phone">
+
+  <!-- input 사용시 같이 쓰는 teg
+       id type name value size maxlength(최대 입력문자)
+       id와 name는 주로 같게 설정한다. -->
+       
+  <!-- input 사용시 주로 같이 쓰는 type
+       text / password / file / reset
+       submit(서버에 정보를 전송) > image로 대체 가능
+       checkbox = 중복 선택 가능
+       radio = 하나만 선택 가능   checked 선택 시 기본 체크된 상태로 아웃
+       range : 막대바 -->
+
+  <!-- <input 안에 넣어야함>
+       placeholder : input창에 회색글씨 뜨는거
+       autofocus : 페이지 열었을때 자동으로 커서 지정되는 곳
+       required : 사용자가 필수로 입력해야하는 부분
+       readonly : 읽기전용(사용자가 입력불가)
+       autocomplete : 자동완성기능 설정(이전에 입력했던 정보들을 뜨게할건지 안뜨게 할건지)-->
+
+  <!-- textarea : 텍스트 영역 크기 -->
+    <label for="memo">메모</label>
+    <textarea id="memo" cols="40" rows="10"></textarea>
+      <!-- 또는 위 아래로 label 막아줘도 됨 -->
+
+  <!-- select -->
+    <label for="pro">상품</label>
+    <select name="pro" id="pro">
+      <option value="test1">선물용1</option>
+      <option value="test2" selected>선물용2</option>
+    </select>
+    <!-- 위아래 비슷함 (주로 위에꺼 씀)-->
+    <datalist id="">
+      <option value=""></option>
+    </datalist>
+
+  <!-- button (form 안에서만 사용 가능) -->
+      <input type="button" value="버튼1">
+      <input type="submit">
+      <input type="reset" value="버튼2">
+  <!-- 아래 button 태그를 더 많이 씀 -->
+      <button>버튼3</button>
+      <button type="submit">주문하기</button> 
+      <button type="reset">취소하기</button>
+
+  <!-- 라벨링을 하면 좋음 선택 시 글자 선택해도 선택 됨 -->
+      <label>
+        <input type="radio" name="class" value="pu"> 웹 퍼블리싱
+      </label>
+
+      <!-- <form action="submit시 어디로 보낼 것인가"
+            method="어떻게 보낼 것인가 (GET or POST)"></form> -->
+            <!-- GET : 주소에 data를 실어 보내는 방식
+                       보안유지 안해도 되는 것
+                       data가 작은 것 -->
+      <!-- http://127.0.0.1:5500/01.HTML+CSS/01.HTML_/05/label.html?user_id=person$user_pw=1234 -->
+              <!-- ?뒤는 쿼리스트링(quryString) -->
+            <!-- POST : 바디에 data를 실어서 서버에 보냄
+                        보안이 필요한 것
+                        data가 큰 것 -->
+
+  <!-- element 요소/태그 -->
+</body>
+</html>

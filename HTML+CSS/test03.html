@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container { 
+      width:520px;
+      border:1px solid black;
+      padding:20px 40px;
+      margin:0 auto;
+    }
+    fieldset { margin-bottom:15px; }
+    legend { font-weight:bold; }
+    ul {list-style-type: none;}
+    li { line-height:30px;}
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>10/07 오늘의 배운 것</legend>
+      <ul>
+        <li>
+          input은 form 안에 넣어야 추후 submit을 작동시킬 수 있다.
+        </li>
+        <li>
+          input 안에 같이 쓰는 Teg는
+          <ul>
+            <li>id</li>
+            <li>type</li>
+            <li>name</li>
+            <li>value</li>
+            <li>size</li>
+            <li>maxlength 등 외에 더 있음</li>
+          </ul>
+        </li>
+        <li>
+          input 사용 시 주로 같이 쓰는 type은
+          <ul>
+            <li>text</li>
+            <li>password</li>
+            <li>file : 파일 첨부</li>
+            <li>reset : 입력 정보를 초기화</li>
+            <li>submit : 어딘가에 입력한 정보를 전송(주로 서버) (image로 일부 대체 가능)</li>
+            <li>checkbox : 중복선택 가능</li>
+            <li>radio : name이 같을 경우 중복선택 불가<br />
+             <small>(checkbox와 radio는 checked 사용 시 해당 input 선택을 디폴트로 한다.)</small></li>
+          </ul>
+        </li>
+        <li>
+          input 부가 설정 Teg
+          <ul>
+            <li>placeholder : input창에 회색글씨 아웃</li>
+            <li>autofocus : 페이지 열었을때 자동으로 커서 지정되는 곳</li>
+            <li>required : 사용자가 필수로 입력해야하는 부분</li>
+            <li>readonly : 읽기전용(사용자가 입력불가)</li>
+            <li>autocomplete : 자동완성기능 설정(이전에 입력했던 정보들을 뜨게할건지 안뜨게 할건지)</li>
+          </ul>
+        </li>
+        <br>
+        <li>
+          text 영역 만들기
+          <br>
+          <label>
+            <h4>MEMO</h4>
+            <textarea id="memo" cols="70" rows="4" placeholder="라벨링을 하면 주위 영역을 눌러도 입력할 수 있다."></textarea>
+          </label>
+        </li>
+        <li>
+          <label for="pro"></label>
+          <select name="pro" id="pro">
+            <option value="test1">section은</option>
+            <option value="test2">option이랑</option>
+            <option value="test3">같이 쓴다.</option>
+          </section>
+          
+        </li>
+            <datalist id="dl">
+            <option value="pro1">얘도</option>
+            <option value="pro2">section이랑</option>
+            <option value="pro3">비슷함</option>
+          </datalist>
+      </ul>
+    </fieldset>
+  </form>
+</body>
+</html>
