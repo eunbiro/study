@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이버 : 회원가입</title>
+  <style>
+    
+    div {
+      margin-top: 50px;
+      margin-left: 200px;
+    }
+    
+    .button1{
+      border: 1px solid rgb(56, 199, 104);
+      border-width: 15px 160px;
+      font-size: 20px;
+      color: white;
+      background-color: rgb(56, 199, 104);
+    }
+    .button2{
+      border: 1px solid rgb(56, 199, 104);
+      
+      border-width: 12px 10px;
+      font-size: 15px;
+      color: white;
+      background-color: rgb(56, 199, 104);
+    }
+    .index1{
+      height: 40px;
+      width: 400px;
+      border: 1px solid lightgray;   
+    }
+    .index2 {
+      height: 40px;
+      width: 130px;
+      border: 1px solid lightgray;
+    }
+    .index3 {
+      height: 45px;
+      width: 410px;
+      border: 1px solid lightgray;
+    }
+    .index4 {
+      height: 40px;
+      width: 270px;
+      border: 1px solid lightgray;
+    }
+    
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <div>
+        <p><b>아이디</b></p>
+        <label for="user_id"></label>
+        <input class="index1" type="text" id="user_id" name="user_id" placeholder="@naver.com" required> <br />
+        <p><b>비밀번호</b></p>
+        <label for="user_pw"></label>
+        <input class="index1" type="password" id="user_pw" name="user_pw" required> <br />
+        <p><b>비밀번호 재확인</b></p>
+        <label for="user_pw2"></label>
+        <input class="index1" type="password" id="user_pw2" name="user_pw2" required> <br />
+      </div>
+      <div>
+        <p><b>이름</b></p>
+        <label for="user_name"></label>
+        <input class="index1" type="text" id="user_name" name="user_name" required> <br />
+        <p><b>생년월일</b></p>
+        <label for="user_bth"></label>
+        <input class="index2" type="number" id="user_bth_y" name="user_bth_y" required placeholder="년(4자)">
+        <input class="index2" type="month" id="user_bth_m" name="user_bth_m" required>
+        <input class="index2" type="number" id="user_bth_d" name="user_bth_n" required placeholder="일"> <br />
+        <p><b>성별</b></p>
+        <label for="sxx"></label>
+         <select class="index3" select name="sxx" id="sxx">
+           <option value="sx" selected>성별</option>
+           <option value="sx_m">남자</option>
+           <option value="sx_w">여자</option>
+           <option value="sx_x">선택안함</option>
+         </select>
+         <br />
+         <p><b>본인 확인 이메일</b><small style="color: gray;">(선택)</small></p>
+         <label for="user_c_mail"></label>
+         <input class="index1" type="email" id="user_c_mail" name="user_c_mail" placeholder="선택입력"> 
+      </div>
+      <div>
+        <p><b>휴대전화</b></p>
+        <label>
+        <select class="index3" select name="tel_num" id="tel_num">
+          <option value="tel1">가나 +233</option>
+          <option value="tel2">그리스 +30</option>
+          <option value="tel3" selected>대한민국 +82</option>
+        </select> <br /><br />
+        <input class="index4" type="tel" id="tel_input" name="tel_input" placeholder="전화번호 입력">
+        <input class="button2" type="submit" value="인증번호 받기"> <br /><br />
+        <input class="index1" type="number" id="c_num" name="c_num" placeholder="인증번호 입력하세요">
+      </label>  
+      </div>
+      <br />
+      <div>
+        <input class="button1" type="submit" value="가입하기">
+      </div>
+    </fieldset>
+  </form>
+</body>
+</html>
