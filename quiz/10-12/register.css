@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/* 초기화 코드 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ccc;
+  padding: 20px;
+  width: 450px;
+}
+
+#signup {
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #222;
+  padding: 20px 20px;
+  position: relative;
+  width: 400px;
+  height: 500px;
+}
+
+#signup fieldset {
+  border: 1px solid rgb(194, 194, 194);
+ line-height: 3em;
+}
+
+/* 제출 버튼 */
+#signup fieldset:last-of-type {
+  margin: 0 auto;
+  width: 50%;
+  border-style: none;
+
+}
+
+/* 로그인 정보, 개인정보 */
+#signup legend {
+  font-weight: bold;
+}
+
+/* 개인정보 li, 로그인 정보 li */
+#signup ul li {
+  list-style-type:none;
+    
+}
+
+/* label요소 */
+#signup label {
+  font-size: small;
+  width: 400px;
+  height: 50px;
+  margin: 10px;
+  text-align: left;
+}
+
+/* 제출버튼 */
+#signup button {
+  padding: 7px 24px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  font-size: 1em;
+}
+
+#signup input[type=text], #signup input[type=password], #signup input[type=tel], #signup input[type=email] {
+position: ab;
+width: 200px;
+height: 25px;
+border-radius: 3px;
+border: 1px solid rgb(216, 216, 216);
+}
+
+/* input태그에서 required속성을 가지고 있는 것 */
+#signup input[required] {
+  border: 1px solid red;
+}
+
+#signup input[readonly] {
+  border-style: none;
+}
+
+#signup button:hover {
+  background: #222;
+  color: #fff;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <style>
+    /* * {
+        font-size: 15px;
+    } */
+
+    /* * {
+       200% 2em(부모태그 기준) 2rem(페이지 기준) > 배수로 봄 2배
+       font-size: 1.5rem;
+    } */
+
+     body {
+      font-size:20px;  /* 전체 글자 크기 */
+    }
+    h1 { 
+      font-family: 바탕;  /* 글꼴 여러개 지정 가능. 마지막에 serif / sans-serif 붙이기 > 다국어 지원폰트*/
+      font-size:3em;  /* 글자 크기 */
+    } 
+    .accent {
+      font-size:larger;  /* 글자 크기 */
+      font-weight: 800;  /* 글자 굵기 */
+    }
+    .italic {
+      font-style: italic;  /* 글자 스타일 */
+    }
+
+    /* 1. 정의 */
+    @font-face {
+      font-family: 'Ostrich';  /* 폰트 이름 */
+      /* 사용자 pc에 해당 폰트가 있는지 서치 */
+      src: local('Ostrich Sans'),
+            url('fonts/ostrich-sans-bold.woff') format('woff'), 
+            url('fonts/ostrich-sans-bold.ttf') format('truetype'), 
+            url('fonts/ostrich-sans-bold.svg') format('svg');
+    }
+    .wfont {
+      font-family: 'Ostrich', sans-serif; /* 웹 폰트 지정 */
+    }
+
+
+    /* 
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    bolck         :   margin과 padding을 자유롭게 지정, width-height 자유롭게 변경
+      div, 시멘틱 태그(레이아웃), p, h1~h6, table, ul.......
+
+    inline        :   margin과 padding을 좌우만 지정, width-height 변경 불가
+      a, img, span, button, textarea, select, input, label.......
+      display: block; > 블록으로 변경
+      display: inline-block; > 블록 설정 사용가능
+
+    inline-block  :   inline태그처럼 한줄로 정렬되지만 block태그의 특징을 사용할 수 있다.
+    */
+
+    span {
+      width: 500px;
+      height: 500px;
+      margin: 50px;
+      display: inline-block;
+      /* display: none; 안보이게 하는 것*/
+    }
+
+    .box2 {
+      box-sizing: border-box;
+			width:200px;
+			height:100px;
+      padding:20px;
+      border:10px solid #00f;
+    }
+
+    /* float */
+    img {
+      float:left;  /* 왼쪽에 떠 있게 */
+      margin-right:40px;
+    }
+    </style>
+</head>
+<body>
+  <!-- 블록 태그 -->
+  <p>블록 태그</p>
+  <p>블록 태그</p>
+  <p>블록 태그</p>
+  <p>블록 태그</p>
+  <!-- 인라인 태그 -->
+  <span>인라인 태그</span>
+  <span>인라인 태그</span>
+  <span>인라인 태그</span>
+  <span>인라인 태그</span>
+
+  position: relative;     뷰포트 기준
+  position: absolute;     부모 태그에 relative를 적용시켜야 함
+  .                       relative(부모박스)를 기준으로 포지션을 잡음
+  .                       부모박스가 relative가 아닐 경우 더 상위 relative찾아서 그 박스를 기준으로 포지션을 잡는다.
+  .                       상위에 부모 태그에 relative가 없으면 HTML을 기준으로 잡는다.
+
+  position: fixed;        스크롤을 내려도 화면에 고정된다. (주로 메뉴 만들 때 쓰임)
+  z-index: 1;             수치가 클 수록 앞에 온다. 포지션상 박스 순서를 바꿀 수 있다.
+
+  float                   옛날 방식의 레이아웃 작성 방법 (요즘은 flex를 많이 씀)
+
+
+</body>
+</html>
