@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #area {
+      position: relative;
+      border: 1px solid #000;
+      width: 500px;
+      height: 400px;
+    }
+
+
+    #box {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100px;
+      height: 100px;
+      background-color: #07f;
+      border: 1px solid #222;
+      border-radius: 50%;
+      animation-name: translate;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+    }
+
+    
+
+    @keyframes translate {
+      from {
+        transform: translate(0, 0);
+      }
+      30% {
+        transform: translate(120px, 180px);
+      }
+      50% {
+        transform: translate(200px, 300px);
+      }
+      65% {
+        transform: translate(290px, 190px);
+      }
+      70% {
+        transform: translate(310px, 210px);
+      }
+      80% {
+        transform: translate(350px, 300px);
+      }
+      90% {
+        transform: translate(400px, 250px);
+      }
+      92% {
+        transform: translate(410px, 260px);
+      }
+      to {
+        transform: translate(450px, 300px);
+      }
+    }
+/* 
+    @keyframes translate2 {
+      from {
+        transform: translate(260px);
+      }
+      to {
+        transform: translateY(200px);
+      }
+    } */
+  </style>
+  
+</head>
+<body>
+  <div id="area">
+    <div id="box"></div>
+  </div>
+
+</body>
+</html>

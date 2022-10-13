@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      width: 962px;
+      margin: 0 auto;
+    }
+
+    #aside {
+      width: 200px;
+      height: 100%;
+      float: right;
+    }
+
+    .section {
+      width: 760px;
+      float: right;
+    }
+
+    #wrap {
+      overflow: hidden;
+      /* 아래 태그가 공간침범하면 바로 위 태그에 쓴다. 넘치는 부분을 숨겨줌 */
+    }
+
+    /* 이미지 위에 글자나 애니메이션 효과를 줘야할 때 백그라운드 이미지를 쓴다 */
+    div {
+      background-image: url('images/bg1.jpg');
+      /* <img src="" alt=""> */
+      /* 
+      background:url('images/bg4.jpg') / no-repeat / left top;
+      한번에 쓸 수도 있다
+      */
+
+    }
+    
+    
+    body {  
+      background-image:url('images/bg2.png');  /* 문서 전체 배경 이미지 */ 
+      background-repeat:no-repeat;  /* 배경 이미지 반복 안 함 */
+      background-position:right top;  /* 배경 이미지를 오른쪽 상단에 위치시킴 */
+      background-attachment:fixed;  /* 배경 이미지 고정 */
+    }
+    div {
+      width:400px;
+      height:250px;
+      padding: 20px;
+      border: 20px  solid rgba(204, 204, 204, 0.493);        
+      margin-bottom:20px;
+      overflow:auto;
+      background-image:url('images/bg3.png');  /* 텍스트 상자의 배경 이미지 */
+      background-repeat:no-repeat;  /* 배경 이미지 반복 안 함 */      
+      background-position:right top;  /* 배경 이미지를 오른쪽 상단에 위치시킴 */
+    }
+    #bg1 {   
+      background-origin:padding-box;  /* 패딩까지 배경 이미지 표시 */
+    }
+    #bg2 { 
+      background-origin:border-box;  /* 테두리까지 배경 이미지 표시 */ 
+    }
+    #bg3 {    
+      background-origin:content-box;  /* 내용 영역만 배경 이미지 표시 */
+    }
+
+    #bg1 { background-size:auto;}  /* 원래 배경 이미지 크기로 표시 */
+    #bg2 { background-size:200px;}  /* 너비는 200px, 높이는 자동 계산 */
+    #bg3 { background-size:50%;}  /* 배경 이미지 너비는 요소 너비의 50%, 높이는 자동 계산 */
+    #bg4 { background-size:100% 100%;}  /* 배경 이미지 너비와 높이는 요소 너비의 100%, 요소 높이의 100% */ 
+    #bg5 { background-size:contain;}  /* 요소 안에 배경 이미지가 다 보이도록 표시 */
+    #bg6 { background-size:cover;}  /* 요소를 완전히 덮도록 배경 이미지 표시 */
+  </style>
+</head>
+<body>
+  <!-- 
+    header
+    navigation  : menu
+    wrap        : main
+    footer
+    레이아웃은 주로 이렇게 크게 구분
+    요즘은 div보다 시멘틱 어쩌고를 더 많이 씀
+   -->
+  <div id="header"><h1>Header</h1></div>
+  <div id="navigation"><h1>Navigation</h1></div>
+  <div id="wrap">
+    <div id="aside">
+      <h1>Aside</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis recusandae cupiditate aut consequatur, nobis autem nulla! Enim, quae error. Numquam beatae rem assumenda quia deserunt commodi cum mollitia voluptatum optio. Perspiciatis recusandae cupiditate aut consequatur, nobis autem nulla! Enim, quae error. Numquam beatae rem assumenda quia deserunt commodi cum mollitia voluptatum optio.</p>
+    </div>
+    <div id="section1" class="section">
+      <h1>section1</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident hic eaque, quis ratione iusto atque, delectus accusantium placeat quasi magnam cumque blanditiis omnis voluptatem quam! Velit cumque eaque ipsa debitis.</p>
+    </div>
+    <div id="section2" class="section">
+      <h1>section2</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident hic eaque, quis ratione iusto atque, delectus accusantium placeat quasi magnam cumque blanditiis omnis voluptatem quam! Velit cumque eaque ipsa debitis.</p>
+    </div>
+    <div id="section3" class="section">
+      <h1>section3</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident hic eaque, quis ratione iusto atque, delectus accusantium placeat quasi magnam cumque blanditiis omnis voluptatem quam! Velit cumque eaque ipsa debitis.</p>
+    </div>
+  </div>
+  <div id="footer"><h1>Footer</h1></div>
+
+
+  <ul>스타일 우선순위
+    <li>1. 인라인 스타일</li>
+    <li>2. 내부 스타일</li>
+    <li>3. 외부 스타일</li>
+  </ul>
+  <ul>선택자 우선순위
+    <li>1. id 선택자</li>
+    <li>2. class 선택자</li>
+    <li>3. 태그 선택자</li>
+  </ul>
+  <!-- !important 적용 시 무조건 우선순위 -->
+  <ul>같은 속성을 적용할 때
+    <li>
+      p {
+        color: blue;
+        color: yellow;
+        color: red;
+        일때 맨 마지막에 오는 속성이 적용
+      }
+    </li>
+  </ul>
+  <ul>
+    <li> 1. 해당태그 2. 전체태그
+      * { color: blue; }
+      p { color: blue; }
+    </li>
+  </ul>
+</body>
+</html>

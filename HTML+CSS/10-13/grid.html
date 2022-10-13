@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #wrapper{
+      width: 700px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 100px);
+      /* 공간 만들기 */
+      grid-template-areas: 
+      "box1 box1 box1"
+      "box5 box5 box5"
+      "box2 box2 box3"
+      "box2 box2 box4"
+      "box2 box2 box4"
+      ;
+      /* 위치 지정해주기 */
+    }
+    .box{
+      padding: 15px;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }   
+
+    /* 1. 각 박스에 이름을 만들어줌 */
+    .box1 {
+      background-color: #3689ff;
+      grid-area: box1;
+    }
+    .box2 {
+      background-color: #00cf12;
+      grid-area: box2;
+    }
+    .box3 {
+      background-color: #ff9019;
+      grid-area: box3;
+      }
+    .box4 {
+      background-color: #ffd000;
+      grid-area: box4;
+    }
+    .box5 {
+      background-color: #744eff;
+      grid-area: box5;
+    }
+
+    #opt5 {
+      align-content: center; 
+    }
+    label {
+      font-size: 13px;
+      float: left;
+      width: 55px;
+      margin: 5px auto;
+    }
+    input{
+      width: 80px;
+      padding: 5px;
+      margin: 1px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+
+    }
+    button {
+      
+      border: none;
+      border-radius: 3px;
+      padding: 20px 5px;
+      float: right;
+    }
+    button:hover {
+      background-color: #222;
+      color: #fff;
+    }
+    a:link, a:visited {
+				color:black;
+				text-decoration: none;
+			}
+			a:hover {
+				background-color:#000;
+				color:#fff;
+				border-radius: 6px;
+
+			}
+
+
+			ul {
+				list-style-type: none;
+			}
+			li {
+				float: left;
+				background-color: lightgray;
+			}
+			a {
+				display: block;
+				padding: 10px 20px;
+			}
+			#menu1 {
+				border-top-left-radius: 6px;
+				border-bottom-left-radius: 6px;
+			}
+			#menu4 {
+				border-top-right-radius: 6px;
+				border-bottom-right-radius: 6px;
+			}
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div> 
+    <div class="box box3">
+      <div>
+        <button>로그인</button>
+      </div>
+      <div class="user">
+        <label for="userid">아이디</label>
+        <input type="text" id="userid" name="userid"><br />
+        <label for="userpw">비밀번호</label>
+        <input type="password" id="userpw" name="userpw">
+      </div>      
+      
+    </div>
+    <div class="box box4">box4</div>
+    <div class="box box5" id="opt5">box5
+      <nav>
+        <ul>
+          <li id="menu1"><a href="#">메뉴1</a></li>
+          <li><a href="#">메뉴2</a></li>
+          <li><a href="#">메뉴3</a></li>
+          <li id="menu4"><a href="#">메뉴4</a></li>
+        </ul>
+      </nav>
+    </div> 
+  </div>
+
+  <!-- #wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 200px);    /* 컬럼에 대한 *//* 쓰는만큼 열이 늘어난다 */
+    /* 200px : 고정값 | 1fr : 비율값 */ /* repeat(n, a) = a크기로 n번만큼 반복 */
+    grid-template-rows: minmax(100px, auto)   /* 로우에 대한 */
+    /* minmax(a, b) a이하로는 작아질 수 없고 b이상으로는 커질 수 없다. | auto : 내용만큼 자동으로 맞춰줌 */
+    
+  }
+
+  #wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 200px);  /* 너비 200px인 칼럼 3개 */
+    grid-template-rows: minmax(100px, auto);  
+    grid-gap: 20px 30px;  /* 칼럼 간격 30px, 줄 간격 20px  */
+    /* 또는 아래와 같이 사용 */
+    /* grid-column-gap:30px; */
+    /* grid-row-gap:20px; */
+  }
+  .items{
+    padding: 10px;
+    background-color: #eee;
+  }   
+  .items:nth-child(odd){
+    background-color: #bbb;
+  } -->
+
+
+<!-- 공간을 만들고 방을 배정 -->
+
+  <!-- #wrapper{
+    width: 700px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    /* 공간 만들기 */
+    grid-template-areas: 
+    "box1 box1 box1"
+    "box2 box3 box3"
+    "box2 . box4"
+    ;
+    /* 위치 지정해주기 */
+  }
+  .box{
+    padding: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }   
+
+  /* 1. 각 박스에 이름을 만들어줌 */
+  .box1 {
+    background-color: #3689ff;
+    grid-area: box1;
+  }
+  .box2 {
+    background-color: #00cf12;
+    grid-area: box2;
+  }
+  .box3 {
+    background-color: #ff9019;
+    grid-area: box3;
+    }
+  .box4 {
+    background-color: #ffd000;
+    grid-area: box4;
+  } -->
+
+<!-- 지정된 숫자 위치에 지정설정 -->
+
+  <!-- #wrapper{
+    width: 700px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+  }
+  .box{
+    padding: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }   
+  .box1 {
+    background-color: #3689ff;
+    grid-column: 1/4;
+  }
+  .box2 {
+    background-color: #00cf12;
+    grid-row: 2/4;
+  }
+  .box3 {
+    background-color: #ff9019;
+    grid-column: 2/4;
+    grid-row-start: 2;
+  }
+  .box4 {
+    background-color: #ffd000;
+    grid-column: 3/4;
+    grid-row-start: 3
+  } -->
+</body>
+</html>

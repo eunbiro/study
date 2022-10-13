@@ -9,68 +9,79 @@
 
 body {
   background: #ccc;
-  padding: 20px;
-  width: 450px;
+  padding: 20px ;
 }
 
 #signup {
   background: #fff;
-  border-radius: 5px;
   border: 1px solid #222;
-  padding: 20px 20px;
-  position: relative;
+  border-radius: 5px;
+  padding: 20px;
   width: 400px;
-  height: 500px;
 }
 
 #signup fieldset {
-  border: 1px solid rgb(194, 194, 194);
- line-height: 3em;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
 }
 
 /* 제출 버튼 */
 #signup fieldset:last-of-type {
-  margin: 0 auto;
-  width: 50%;
-  border-style: none;
-
+  border: none;
 }
 
 /* 로그인 정보, 개인정보 */
 #signup legend {
+  font-size: 16px;
   font-weight: bold;
+  padding-left: 5px;
+  padding-bottom: 10px;
 }
 
 /* 개인정보 li, 로그인 정보 li */
 #signup ul li {
-  list-style-type:none;
-    
+  line-height: 30px;
+  list-style: none;
+  padding: 5px 10px;
+  margin-bottom: 2px;
 }
 
 /* label요소 */
-#signup label {
-  font-size: small;
-  width: 400px;
-  height: 50px;
-  margin: 10px;
-  text-align: left;
+  #signup label {
+    float: left;
+    font-size: 13px;
+    width: 110px;
 }
 
 /* 제출버튼 */
-#signup button {
-  padding: 7px 24px;
-  border-radius: 25px;
-  border: 1px solid #000;
-  font-size: 1em;
+  #signup button {
+    border: 1px solid #222;
+    border-radius: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;    /* 단어간 간격 */
+    padding: 7px 25px;
+    display: block;
+    margin: 0 auto;         /* 가운데 정렬 */
 }
 
 #signup input[type=text], #signup input[type=password], #signup input[type=tel], #signup input[type=email] {
-position: ab;
-width: 200px;
-height: 25px;
-border-radius: 3px;
-border: 1px solid rgb(216, 216, 216);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 5px;
+  width: 200px;
 }
+
+/*
+위에 대신 아래도 사용가능
+#signup input:not([type=radio]) {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 5px;
+  width: 200px;
+}
+*/
 
 /* input태그에서 required속성을 가지고 있는 것 */
 #signup input[required] {
@@ -78,7 +89,7 @@ border: 1px solid rgb(216, 216, 216);
 }
 
 #signup input[readonly] {
-  border-style: none;
+  border: none;
 }
 
 #signup button:hover {
