@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrap {
+      width: 960px;
+      height: 500px;
+      background: skyblue;
+      margin: 0 auto;
+    }
+
+    #wrap div {
+      width: 300px;
+      height: 100%;
+      display: inline-block;
+    }
+
+    #wrap div:first-child {
+      background: salmon;
+      margin-right: 200px;
+    }
+
+    #wrap div:nth-child(2) {
+      background: teal;
+    }
+
+    @media screen and (max-width: 959px) {
+      #wrap {
+        width: 100%;
+      }
+				/* 200px ÷ 960px | margin설정해주면 마진도 비율 설정을 해야한다. */
+      #wrap div:first-child {
+        margin-right: 20.83%;
+      }
+				/* 300px ÷ 960px */
+      #wrap div {
+        width: 31.25%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>
+
+<!-- 화면설계 -->
+<!--
+  와이어프레임
+  목업 : 실문디자인과 흡사한 정적인 설계문서
+  프로토타입 : 실제 서비스처럼 작동
+  스토리보드 : 정책, 프로세스, 와이어프레임, 설명 등이 모두 포함 된 설계 문서
+-->
