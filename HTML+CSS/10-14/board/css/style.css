@@ -37,6 +37,8 @@ a {
   border-radius: 2px;
   font-size: 1.4rem;
   text-align: center;
+  border-radius: 5px;
+
 }
 
 .bt_wrap a:hover {
@@ -64,6 +66,10 @@ a {
 
 .board_list caption {
   padding: 30px;
+}
+
+.board_list th {
+  background: #ddd;
 }
 
 .board_list th,td {
