@@ -57,7 +57,7 @@ a {
   margin: 0 auto;
 }
 
-.board_list {
+.board_list {     /* table */
   width: 100%;
   border-top: 1px solid #222222;
   border-collapse: collapse;
@@ -349,11 +349,12 @@ a {
     margin-bottom: 10px;
   }
 
-  .board_write .title input[type:text] {
+  .board_write .title input[type=text] {
     width: 100%;
   }
 
-  .board_write .info input[type:text], .board_write .info input[type:password] {
+  .board_write .info input[type=text], .board_write .info input[type=
+  password] {
     width: 80%;
   }
 

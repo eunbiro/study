@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* script 3대장 */
+    // alert("test!");                 /* 경고창 */
+    // confirm("확인하시겠습니까?");     /* 확인|취소 창 */
+    // prompt("입력하세요", 10);        /* 입력창 (질문내용, 기본적으로 넣어주는 초기값) */
+
+    // console.log('안녕하세요');        /* console창 로그에 뜨는 내용 */
+    // document.write("테스트합니다");   /* 브라우저에 뜨는 내용 */
+
+    // var num = 9;          /* number */
+    // var num2 = 2;
+    // var sum = num + num2
+    // console.log(sum);
+    // console.log(num + num2);
+    // console.log(num - num2);
+    // console.log(num * num2);
+    // console.log(num / num2);
+    // console.log(num % num2);  // 나머지
+    // console.log(num);
+
+
+    // var str = "test";     /* string */
+    // console.log(str);
+    // var str2 = "i " + "am " + str;    /* 문자열 합산 */
+    // console.log(str2);
+    // var str3 = "1";       /* "" | '' 문자 */
+    // var sum = 10;
+    // console.log(str3 + sum);
+    // // 더하기를 할 때 하나라도 문자가 있으면 문자열 합산을 한다.
+    // console.log("\"안녕하세요. \n 저는 \t'은비'입니다.\"")
+    // \n : 줄바꿈    \t : tab키
+
+    // var flag = 10 == 10;      /* boolean */
+    // // console.log(flag);
+    
+    // var a = 10;
+		// var b = 20;
+		// var c = 10;
+		// var f = "20";
+		// var result = b == f;    // 값만 비교
+		// var result2 = b === f;  // 값 비교, 자료형(숫자/문자같은 타입) 비교
+    // console.log(result);
+    // console.log(result2);
+
+    // var a;                    // undefined 값이 정의되지 않음
+    // var b = null;             // 빈값
+    // console.log(a);
+    // console.log(b);
+    // // undefined, null, 빈문자열(''), 0 (<<얘네는 전부 false)을 제외한 모든 것은 true
+    // console.log(Boolean(b));   // false
+    // console.log(Boolean(343)); // true
+
+    // var flag1 = 10>2, flag2 = 10<5, flag3 = 2>=1;
+    // console.log(flag1 && flag2 && flag3);    // and  (두개 다 true여야 true)
+    // console.log(flag1 || flag2 && flag3);    // or   (둘쭝 하나만 true여도 true)
+    // console.log(!flag2);                     // not  (부정문-결과의 반대값을 출력)
+
+    // console.log(typeof('2'))                 // typeof (안에 넣는 입력값의 타입을 출력)
+
+    // var num = 1;        // 변수
+    // var num = 10;       // 같은 변수 선언 가능
+    // num = 5;            // 설정 값 변경 가능
+    // console.log(num);   // 최종 설정 값 출력
+
+
+    // const num2 = 2;     // 상수 : constant
+    // // num2 = 5;         // 설정 값 변경 불가   err!
+    // // console.log(num);
+    
+
+    // let num3 = 5;       // 변수
+    // // let num3 = 5;    // 같은 변수 선언 불가  err!
+    // num3 = 2;           // 설정 값 변경 가능
+
+    /* 복합 대입 연산자 */
+
+    //  const a = 10, b = 12;
+    //  let sum = 0;
+
+    //  console.log(sum += a);    ==    console.log(sum = sum + a);
+    //  console.log(sum -= a);    ==    console.log(sum = sum - a);
+    //  console.log(sum *= a);    ==    console.log(sum = sum * a);
+    //  console.log(sum /= a);    ==    console.log(sum = sum / a);
+    //  console.log(sum %= a);    ==    console.log(sum = sum % a);
+
+    // let list = '';
+
+    // list += '<ul>';
+    // list += '   <li>Hello</li>';
+    // list += '   <li>JavaScript</li>';
+    // list += '</li>';
+
+    // document.write(list);
+
+    // var num1 = 10;
+    // var num2 = 20;
+    // var result;
+    //  
+    // num1--; //9
+    // document.write(num1, "<br>");
+
+    // num1++; //10
+    // document.write(num1, "<br>");    
+
+    // // 후위 연산자 : 대입 후에 증가
+    // result = num2++;  //result: 20, num2: 21  
+    // document.write(result, "<br>"); 
+
+    // // 전위 연산자 : 증가 후에 대입
+    // result = ++num2;  //result: 22, num2: 22  
+    // document.write(result, "<br>"); 
+
+    /* 연산자 우선순위 */
+
+    // 1. ()
+    // 2. 단항 연산자 (++, --, !)
+    // 3. 산술 연산자 (*, /, +, -)
+    // 4. 비교 연산자 (>, >=, <, <=, ==, ===, !=, !==)
+    // 5. 논리 연산자 (&&, ||)
+    // 6. 복합 대입 연산자 (=, +=, -=, *=, /=, %=)
+
+
+    // prompt는 문자형으로 입력 받는다.  
+    // const str = prompt("아무 숫자나 입력하시오.", 0);
+    // console.log(str)
+    // let num = 10;
+
+    // let sum = 12 + Number(str);        // 문자 > 숫자
+    // let sum = 12 + parseInt(str);      // 문자 > 숫자
+    // let sum = 12 + String(num);        // 숫자 > 문자
+    // console.log(sum)
+    // console.log(Boolean(num));         // 숫자 > boolean
+  </script>
+</body>
+</html>

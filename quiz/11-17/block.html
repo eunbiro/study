@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul, li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      border: 0;
+    }
+
+    header, section, footer {
+      box-sizing: border-box;
+    }
+
+    .header__nav {
+      max-width: 1440px;
+      margin: 0 auto;
+      background: #423524;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .header__nav > h1 {
+      width: calc(100% - 100px);
+      text-align: center;
+    }
+    
+    .header__mo_menu {
+      width: 100px;
+      height: 66px;
+      background: #d4b58b;
+    }
+
+    .header__menu {
+      width: calc(100% - 300px);
+      background: #d4b58b;
+      height: 66px;
+      display: none;
+    }
+
+    .header__menu > ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .header__search {
+      width: 50px;
+      height: 66px;
+      background: #a3722e;
+      display: none;
+    }
+
+    .header__sns {
+      width: 150px;
+      height: 66px;
+      background: #70a32e;
+      display: none;
+    }
+
+    .header__sns > ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .header__lang {
+      width: 65px;
+      height: 66px;
+      background: #2ea372;
+      display: none;
+    }
+
+    .header__qlink {
+      width: 110px;
+      height: 66px;
+      background: #eca31a;
+    }
+
+    section .con {
+      width: 1440px;
+      margin: 0 auto;
+      height: 100%;
+    }
+
+    .main__cont {
+      height: 720px;
+      background: #2e53a3;
+    }
+
+    .sub__cont {
+      background: #8c2ea3;
+    }
+
+    .sub__cont > h1 {
+      height: 36px;
+      background: #a32e4b;
+    }
+
+    .content__scut {
+      display: flex;
+      flex-direction: column;
+      height: 900px;
+    }
+
+    .content__scut > div {
+      flex: 1;
+      text-align: center;
+    }
+
+    .content__scut > .content__news {
+      background: #2e91a3;
+    }
+
+    .content__scut > .content__sub {
+      background: #362ea3;
+    }
+
+    .highlight__cont {
+      background: #202288;
+    }
+    
+    .highlight__cont > h1 {
+      height: 36px;
+      background: #75e072;
+    }
+
+    .highlight__cont ul {
+      overflow: hidden;
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    .highlight__cont ul li{
+      float: left;
+      width: 99%;
+      text-align: center;
+      height: 350px;
+    }
+
+    .highlight__cont .hl__news1 {
+      background: #2ea351;
+    }
+    .highlight__cont .hl__news2 {
+      background: #2e8ca3;
+    }
+    .highlight__cont .hl__media {
+      background: #362ea3;
+    }
+    .highlight__cont .hl__channel {
+      background: #a32e9d;
+    }
+
+    .footer {
+      padding-top: 20px;
+      height: 200px;
+      background: #2ea351;
+    }
+
+    .footer h1 {
+      height: 100px;
+      background: #9fa3b8;
+    }
+
+    .footer ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+/* 767~ */
+    @media all and (min-width: 767px) {
+      .content__scut {
+        flex-direction: row;
+        height: 500px;
+      }
+
+      .header__nav > h1 {
+      width: 300px;
+      height: 66px;
+      }
+      
+
+      .highlight__cont ul li{
+        width: 49%;
+      }
+
+      .footer ul {
+        flex-direction: row;
+      }
+
+      .header__menu {
+        display: inline;
+      }
+
+      .header__search {
+        display: inline;
+      }
+
+      .header__sns {
+        display: inline;
+      }
+
+      .header__lang {
+        display: inline;
+      }
+      .header__mo_menu {
+        display: none;
+      }
+      .footer {
+      height: 120px;
+    }
+
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header__nav">
+      <div class="header__mo_menu">maun</div>
+      <h1>logo</h1>
+      <nav class="header__menu">
+        <ul>
+          <li>SK소개</li>
+          <li>MEDIA센터</li>
+          <li>사회적 가치</li>
+          <li>채용</li>
+        </ul>
+      </nav>
+      <div class="header__search">
+        <button>search</button>
+      </div>
+      <nav class="header__sns">
+        <ul>
+          <li><a href="#">y</a></li>
+          <li><a href="#">b</a></li>
+          <li><a href="#">f</a></li>
+          <li><a href="#">p</a></li>
+          <li><a href="#">n</a></li>
+        </ul>
+      </nav>
+      <div class="header__lang">언어</div>
+      <div class="header__qlink">quick link</div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="main__cont con">
+      <div>maindesk</div>
+    </section>
+    <section class="sub__cont con">
+      <h1>gateway</h1>
+      <div class="content__scut">
+        <div class="content__news">뉴스 바로가기</div>
+        <div class="content__sub">계열사 바로가기</div>
+        <div class="content__em">채용 바로가기</div>
+      </div>
+    </section>
+    <section class="highlight__cont con">
+      <h1>highlight</h1>
+      <div>
+        <ul>
+          <li class="hl__news1">뉴스</li>
+          <li class="hl__news2">뉴스</li>
+          <li class="hl__media">미디어</li>
+          <li class="hl__channel">채널</li>
+        </ul>
+      </div>
+    </section>
+    <footer class="footer">
+      <div>
+        <ul>
+          <li><h1>logo</h1></li>
+          <li>
+            <div>윤리경영</div>
+            <div>주소</div>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
