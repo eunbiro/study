@@ -1,0 +1,271 @@
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul, li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      border: 0;
+    }
+
+    html {
+      font-size: 10px;
+    }
+    header, section, footer {
+      box-sizing: border-box;
+    }
+
+    .header__nav {
+      max-width: 1440px;
+      margin: 0 auto;
+      background: #fff;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 66px;
+      
+    }
+
+    .header__nav h1 {
+      display: inline-block;
+      margin-top: 20px;
+      margin-left: 10px;
+      width: calc(100% - 100px);
+      text-align: center;
+    }
+
+    .header__logo {
+      display: none;
+    }
+    
+    .header__mo_menu {
+      width: 100px;
+      /* background: #d4b58b; */
+    }
+
+    .header__menu {
+      width: calc(100% - 200px);
+      /* background: #d4b58b; */
+      font-size: 1.4rem;
+      font-weight: large;
+      display: none;
+    }
+
+    .header__menu > ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .header__menu ul li {
+      padding: 10px;
+    }
+
+    .header__search {
+      width: 50px;
+      /* background: #a3722e; */
+      display: none;
+    }
+
+    .header__sns {
+      width: 150px;
+      /* background: #70a32e; */
+      display: none;
+    }
+
+    .header__sns > ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .header__lang {
+      display: inline-block;
+      width: 80px;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 2px;
+      /* background: #2ea372; */
+      display: none;
+    }
+
+    .header__qlink {
+      letter-spacing: 1px;
+      display: inline-block;
+      width: 70px;
+      height: 66px;
+      font-size: 11px;
+      text-align: center;
+      background: #fff;
+      color: #de071a;
+      font-family: "Roboto",sans-serif;
+      
+      /* background: #eca31a; */
+    }
+
+    section .con {
+      width: 1440px;
+      margin: 0 auto;
+      height: 100%;
+    }
+
+    .main__cont {
+      height: 720px;
+      background: #2e53a3;
+    }
+
+    .sub__cont {
+      background: #fff;
+    }
+
+    .sub__cont h1 {
+      color : #fc6620;
+      font-size: 3rem;
+      line-height: -5px;
+    }
+
+    .sub__cont .color1 {
+      color: #de071a;
+    }
+
+    .sub__cont > h1 {
+      padding: 50px 30px;
+      padding-top: 80px;
+      background: #fff;
+    }
+
+    .content__scut {
+      display: flex;
+      flex-direction: column;
+      height: 900px;
+    }
+
+    .content__scut > div {
+      flex: 1;
+      text-align: center;
+    }
+
+    .content__scut > .content__news {
+      background: #2e91a3;
+    }
+
+    .content__scut > .content__sub {
+      background: #362ea3;
+    }
+
+    .highlight__cont {
+      background: #202288;
+    }
+    
+    .highlight__cont > h1 {
+      height: 36px;
+      background: #75e072;
+    }
+
+    .highlight__cont ul {
+      overflow: hidden;
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    .highlight__cont ul li{
+      float: left;
+      width: 99%;
+      text-align: center;
+      height: 350px;
+    }
+
+    .highlight__cont .hl__news1 {
+      background: #2ea351;
+    }
+    .highlight__cont .hl__news2 {
+      background: #2e8ca3;
+    }
+    .highlight__cont .hl__media {
+      background: #362ea3;
+    }
+    .highlight__cont .hl__channel {
+      background: #a32e9d;
+    }
+
+    .footer {
+      padding-top: 20px;
+      height: 200px;
+      background: #2ea351;
+    }
+
+    .footer h1 {
+      height: 100px;
+      background: #9fa3b8;
+    }
+
+    .footer ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+/* 767~ */
+    @media all and (min-width: 1200px) {
+      .content__scut {
+        flex-direction: row;
+        height: 500px;
+      }
+
+      .header__nav > h1 {
+      width: 300px;
+      height: 66px;
+      }
+      
+      .header__logo {
+        display: inline;
+      }
+
+      .header__m_logo {
+        display: none;
+      }
+
+      .header__qlink {
+        width: 200px;
+        background: #de071a;
+        color: #fff;
+      }
+
+      .highlight__cont ul li{
+        width: 49%;
+      }
+
+      .footer ul {
+        flex-direction: row;
+      }
+
+      .header__menu {
+        display: inline;
+      }
+
+      .header__search {
+        display: inline;
+      }
+
+      .header__sns {
+        display: inline;
+      }
+
+      .header__lang {
+        display: inline;
+      }
+      .header__mo_menu {
+        display: none;
+      }
+      .footer {
+      height: 120px;
+    }
+
+    }

@@ -21,9 +21,9 @@ a {
 
 .board_list {
     width: 100%;
+    font-size: 1.5rem;
     border-top: 1px solid #222;
     border-collapse: collapse;
-    font-size: 1.5rem;
 }
 
 .board_list caption {
@@ -32,8 +32,8 @@ a {
 
 .board_list th, td {
     padding: 10px;
-    text-align: center;
     border-bottom: 1px solid #222;
+    text-align: center;
     border-spacing: 0;
 }
 
@@ -51,10 +51,10 @@ a {
     min-width: 80px;
     margin-left: 10px;
     padding: 10px;
+    text-align: center;
+    font-size: 1.4rem;
     border: 1px solid #222;
     border-radius: 5px;
-    font-size: 1.4rem;
-    text-align: center;
 }
 
 .bt_wrap a:hover {
@@ -63,17 +63,17 @@ a {
 
 .board_page {
     display: flex;
-    justify-content: center;
     margin-top: 30px;
+    justify-content: center;
     text-align: center;
 }
 
 .board_page a {
     display: inline-block;
-    width: 32px;
-    height: 32px;
     box-sizing: border-box;
     border-left: 0;
+    width: 32px;
+    height: 32px;
     line-height: 32px;
 }
 
@@ -91,11 +91,10 @@ a {
 }
 
 .board_page a.on {
-    border: 1px solid #222;
+    border-color: #222;
     background: #222;
     color: #fff;
 }
-
 
 @media all and (max-width: 767px) {
     .wrap {

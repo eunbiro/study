@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const num = Number(prompt("학년을 입력하시오.", ""));
+
+    if (num === 4) {
+      const point = Number(prompt("점수를 입력하시오.", ""));
+
+      if (point < 0 || point > 100) {
+        alert("에러입니다.");
+      }else if (point >= 70) {
+        alert("합격");
+      } else {
+        alert("불합격");
+      }
+    } else {
+      const point = Number(prompt("점수를 입력하시오.", ""));
+
+      if (point < 0 || point > 100) {
+        alert("에러입니다.");
+      }else if (point >= 60) {
+        alert("합격");
+      } else {
+        alert("불합격");
+      }
+    }
+  </script>
+</body>
+</html>
