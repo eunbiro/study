@@ -11,6 +11,14 @@
     <script>
         var arr = [2, 5, 9, 6];
 
+        for (let i = 0; i < arr.length; i++) {
+            let num = arr[i];
+            if (num === 5) {
+                arr.splice(i, 1);
+            }
+        }
+
+        console.log(arr);
     </script>
 </body>
 </html>

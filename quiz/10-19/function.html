@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function bmi(a, b) {
+      return a / (b * b);
+    }
+
+    const bmi2 = function(a, b) {
+      return a / (b * b);
+    }
+
+    const bmi3 = (a, b) => a / (b * b);
+
+    let result = bmi(50, 1.6);
+    let result2 = bmi2(50, 1.6);
+    let result3 = bmi3(50, 1.6);
+
+    console.log(result);
+    console.log(result2);
+    console.log(result3);
+  </script>
+</body>
+</html>

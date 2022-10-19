@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    5. 배열에서 중복 항목을 제거하는 코드를 작성하십시오
+    -->
+    <script>
+        var num = [1, 2, 2, 4, 5, 4, 7, 8, 7, 3, 6];
+
+        let j = 0;
+        let result = [];
+
+        for (let i = 0; i < num.length; i++) {
+            let flag = false;
+
+            for (let j = 1 + i; j < num.length; j++) {
+                if (num[i] === num[j]) {
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (flag === false) {
+                result.push(num[i]);
+            }
+
+        }
+
+        // 배열을 처음부터 끝까지 돌리는 for문을 하나 만들고 그 각각 비교할수있는 두번째 for문을 만들어서 
+        // 비교하면 될 것 같은데첫번째꺼 끝나고 두번째꺼 돌릴때 두번째 for문은 그 다음거 부터 돌려야함
+        // 
+        console.log(result);
+    </script>
+</body>
+</html>
