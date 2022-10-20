@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+//     네이밍 가이드
+
+// 1. 카멜 (변수명, 함수명)
+//   userList  ||  newTodoList
+
+// 2. 파스텔케이스 (클래스명, 객체명)
+//   userList  ||  NewTodoList
+
+// 3. 스네이크케이스(파일명)
+//   user_list ||  new_todo_list
+
+// 4. 케밥 표기법(css)
+//   user-list ||  new-tidi-list
+
+// 5. 헝가리안 표기법(jquery)
+//   $userList ||  $newTodoList
+
+
+// >조합순서
+// >외형_의미_순서_상태
+//   cancel_btn_off_01.gif
+//   <h1 class=”msgbox-off-toggle”>    X
+
+//   btn_cancel_01_off.gif
+//   <h1 class=”msgbox-toggle-off”>    O
+
+// >하이픈(-)은 CSS 언더스코어(_)는 파일, 폴더명
+//   <h1 class=”msg-off”>
+//   <input type=”text” class=”msg-on” name=”msg_test”>    O
+
+// >한자리 정수는 사용하지 않음
+//   btn_cancel_1_off.gif
+//   <h1 class=”msg-1-off”>            X
+
+//   btn_cancel_01_off.gif
+//   <h1 class=”msg-01-off”>           O
+
+
+// ====================================================================
+
+
+//   최소값 구하는 함수
+
+//   const arr = [52, 273, 32, 103, 275, 24, 57];
+
+//         // 입력 첫번째 값, ...나머지 값들
+//   function min(first, ...rests) {
+//     let output;
+//     let items;
+
+//     // 매개변수의 자료형이 숫자인지 배열인지 판단
+//     Array.isArray(first)        >     배열이면 true 아니면 false
+//     typeof(first) === 'number'  >     타입이 숫자형인지 확인
+
+
+//     if (Array.isArray(first)) {
+//       output = first[0];
+//       items = first;
+//     } else if (typeof(first) === 'number') { // 숫자형 이라면ㅁ
+//       output = first;
+//       items = rests;
+//     }
+
+//     for (const item of items) {
+//       if (output > item) {
+//         output = item;
+//       }
+//     }
+
+//     return output;
+//   }
+
+//   console.log(`최소값(숫자) : ${min(52, 273, 32, 103, 275, 24, 57)}`);
+//   console.log(`최소값(배열) : ${min(arr)}`);
+
+// ============================================================================
+
+//                     기본 매개변수로 객체를 쓸수 있음
+//   function isLeapYear(year=new Date().getFullYear()) {
+//     let result;
+//     if (year % 4 === 0 && !(year % 100 === 0) || year % 400 === 0) {
+//       result = "윤년입니다.";
+//     } else {
+//       result = "윤년이 아닙니다.";
+//     }
+
+//     return result;
+//   }
+  
+//   result = isLeapYear(year);
+
+//   console.log(result);
+
+
+// =================================================================================
+
+// 1. rest parameter(나머지 매개변수)
+
+//   function sample(a, b, ...items) {   // 배열로 받아옴
+//     console.log(a, b, items);
+//   }
+
+//   sample(1, 2, 3, 4);
+//   sample(1, 2, 3);
+//   sample(1, 2);
+
+
+// 2. spread operator (전개 연산자)
+  
+//   function sample(...items) {
+//     console.log(items);
+//   }
+
+//   const array = [1, 2, 3, 4];
+
+//   console.log(`전개 연산자를 사용하지 않을 때 : ${sample(array)}`)
+//   // ...items는 배열로 값을 가져오기 때문에 배열을 그냥 넣어주면 배열을 배열안에 넣어서 아래처럼 출력한다.
+//   // [[1, 2, 3, 4]]
+
+//   console.log(`전개 연산자를 사용 할 때 : ${sample(...array)}`)
+//   // 배열 앞에 ...을 넣어주면 []을 분해해서 1, 2, 3, 4로 만들어준다. 이후 ...items 들어가면서 배열로 감싸준다.
+//   // [1, 2, 3, 4]
+
+
+// 3. 기본 매개변수
+
+//                           매개변수에 초기값을 넣어주면 함수 사용시 매개변수를 입력하지 않아도 디폴트로 초기값이 출력된다.
+//   function earnings(name, wage=9000, hours=40) {
+//     console.log(`${name} 님의 급여 정보`);
+//     console.log(`시급 : ${wage}`);
+//     console.log(`근무시간 : ${hours}`);
+//     console.log(`급여 : ${wage * hours} 원`);
+//     console.log(`================================`);
+//   }
+
+//   earnings('구름');
+//   earnings('별', 10000);
+//   earnings('달', 10000, 52);
+
+
+// 4. 구버전 자바스크립트에서 매개변수 구하기(참고)
+  
+//   function sample() {
+//     console.log(arguments);   // arguments : 매개변수를 배열로 가져온다.
+
+//     for (let i = 0; i < arguments.length; i++) {
+//       console.log(`${i} 번째 : ${arguments[i]}`);
+//     }
+//   }
+
+//   sample(1, 2);
+//   sample(1, 2, 3);
+//   sample(1, 2, 3, 4);
+
+// ===================================================================================
+  
+// 콜백 함수(callback) : 매개변수로 전달하는 함수
+
+//   function callThreeTimes(callback) {   // callback : 함수를 넘겨받는 매개변수
+//     for (let i = 0; i < 3; i++) {
+//       callback(i);  // == print(i);
+//     }
+//   };
+
+//   function print(i) {
+//     console.log(`${i} 번째 함수 호출`);
+//   };
+
+//   callThreeTimes(print);
+//   callThreeTimes(function(i){console.log(`${i} 번째 함수 호출`)});
+
+//   function(value, index, array)
+//            배열값  인덱스  배열
+
+//   const numbers = [0, 273, 52, 103, 32, 57];
+
+// 1. forEach()    배열에서 이용
+
+//   numbers.forEach(function(value, index, array){
+//     console.log(`${array}`);
+//     console.log(`${index} 번째 ${value}`);
+//   });
+
+// 2.  map()        return 값들을 모아서 새로운 배열로 만들어준다.
+
+//   let result = numbers.map(function(value, index, array){
+//     console.log(`${index} 번째 ${value}`);
+//     return value * value;
+//   });
+
+//   console.log(result);
+
+// 3. filter()     return 값이 참일 때만 해당 데이터를 모아준다.
+//   const evenNumbers = numbers.filter(function(value){
+//     return value % 2 === 0;
+//   });
+
+//   console.log(evenNumbers);
+
+
+// ===================================================================================
+
+// 타이머 함수
+
+//   1000 = 1초
+
+//   setTimeout(function() {
+//     //.. 비익명으로 해도 되고 아래처럼 화살표로 해도 됨
+//   })
+
+//   setTimeout(()=>{    // n 초 뒤에 실행
+//     console.log(`1초 후에 실행 됩니다.`);
+//   }, 2000);
+
+//   let cnt = 0;
+
+//   let id = setInterval(()=>{   // n 초 마다 한번씩
+//     console.log(`2초마다 실행됩니다. ${cnt}`);
+//     cnt++;
+//   }, 2000);
+
+//   setTimeout(()=>{
+//     console.log(`타이머 종료`);
+//     clearInterval(id);        // setInterval를 종료시켜주는 함수. setInterval를 변수선언하고 넣어줌
+//   }, 10000);
+
+
+// ===================================================================================
+
+
+// 즉시 실행 함수
+
+//   var num = 100;
+
+//   // 라이언 개발자
+//   function menu() {
+//     num += 100;
+//     alert(num);
+//   }
+//   menu();
+
+//   // 어피치 개발자
+//   function menu() {
+//     alert(num);
+//   }
+
+//       /* 아래처럼 감싸주면 사용가능 */
+
+//   // 라이언 개발자
+//   (function () {
+//     var num = 100;       > 지역변수    선언한 지역에서만 사용 가능
+//     function menu() {    > 지역함수
+//       num += 100;
+//       alert(num);
+//     }
+//     menu();
+//   })();
+
+//   // 어피치 개발자
+//   (function () {
+//     var num = 100;
+//     function menu() {
+//       alert(num);
+//     }
+//   })();
+  
+// ===================================================================================
+
+
+//   호이스팅   :   함수 정의를 밑에해도 위에서 사용가능
+
+//   a();     > 사용가능
+
+//   function a() {
+//     document.write("haha");
+//   }
+
+//   b();     > 사용불가
+
+//   const b = function () {
+//     document.write("baba");
+//   };
+
+//   스코프
+
+//   var num = 1;            //  >> 전역변수 (모든 곳에서 사용 가능)
+//   //함수선언
+//   function love(){
+//     var a = num + 1;      //  >> 지역변수 (선언한 함수 내에서만 사용 가능)
+//     console.log('a:', a);
+//   }
+
+//   love();
+//   console.log(num);
+
+// var num = 1;
+//   //함수선언
+//   function love(){
+//       str ='산';    //전역변수   >>    앞에 식별자가 없을 땐 전역변수로 인식 됨
+//       var sum ='강'; //지역변수
+//       document.write('함수내에서 출력 ', str,'<br>');
+//       document.write('함수내에서 출력 ', sum,'<br>');
+//       return str;
+//   }
+//   love();
+//   document.write(str,'<br>');
+
+
+//   블록변수 let
+
+//   var은 중괄호를 넘나들을 수 있음 (if문 안에있던 var선언된 값을 가져옴)
+//   let은 중괄호 내부에 접근을 할 수 없음 (if문 안에있는 var 값을 가져올 수 없음)
+//   const도 내부 접근 불가
+  
+//   function logScope(){
+//     var local = 2;
+//         if(local){
+//             var local = '다른 값';
+//             console.log('블럭안의 var:',local);
+//         }
+//         console.log('local',local)
+//     }
+//     logScope();
+
+
+// ===================================================================================
+
+
+  let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  // 메서드 체이닝      필터로 거른 정보를                 맵에서 *2      이런 식으로 계속 붙일 수 있음
+  let result = numbers.filter(value => value % 2 === 0).map(value => value * 2).forEach(value => console.log(value));
+  // console.log(result);
+
+
+  let result1 = numbers.filter(function(value) {
+    return value % 2 === 0;
+  }).map(function(value) {
+    return value * 2;
+  }).forEach(function(value) {  // forEach는 consol로만 출력되는듯?
+    console.log(value)});
+
+    
+  // console.log(result1);
+  </script>
+</body>
+</html>
