@@ -1,0 +1,365 @@
+<script>
+  
+  객체
+
+  변수(속성) + 메서드(함수)
+
+//배열, 객체 데이터(JSON)
+
+    const product = {
+      name: '건조망고',   //  key: value
+      type: '당절임',     //  key: value
+      weight: 3,         //  key: value
+      arr: ['안', '녕', '하', '세', '요']
+    }
+    
+    console.log(product.type);    // 당절임 출력
+    console.log(product.arr);     // 배열 1,2,3 출력
+
+    //데이터 바꾸기
+    product.name = '바나나'
+    console.log(product);
+
+    // 배열 꺼내오기
+    const result = product.arr[1];
+    console.log(result);
+  
+    // 데이터 추가
+    product.date = '2022/10/21'
+    console.log(product);
+
+    // 데이터 삭제
+    delete product.weight
+    console.log(product);
+
+
+
+
+/* 데이터 가져올때 많이쓰는 유형 */
+// JSON객체
+    
+    const product2 = [{
+      name: '건조바나나',
+      type: '바나나절임',   // product[0]
+      weight: 2,    
+    }, {
+      name: '건조망고',
+      type: '당절임',       // product[1]
+      weight: 3,    
+    }];
+
+    console.log(JSON.stringify(product2));    // 객체 데이터를 문자열로 변환하여 출력
+    console.log(product2[0]);
+    console.log(product2[1]);
+
+    const product3 = '{"result": true, "count": 42}';
+    const obj = JSON.parse(product3);         // 문자열을 객체 데이터로 변환하여 출력
+    console.log(obj);
+
+
+
+
+
+
+// 1. 리터럴(Literal) 방식(6-1-1.html)
+    // 객체 = 속성 + 메소드(함수)
+
+    const pet0 = {
+      name  :  '구름',
+      age   :  '3살',
+      type  :  '먼치킨',
+      eat   :  (food => console.log(`구름이가 \'${food}\' 을(를) 먹습니다.`)),
+      sleep :  (place => console.log(`구름이가 \'${place}\' 에서 잠을 잡니다.`))
+    };
+
+    console.log (`이름 : ${pet0.name}`);
+    console.log (`나이 : ${pet0.age}`);
+    console.log (`종 : ${pet0.type}`);
+    pet.eat     (`참치캔`);
+    pet.sleep   (`소파`);
+
+
+
+
+
+
+
+
+// 2. 객체 생성자 방식
+    // 객체 = 속성 + 메소드
+
+    function Pet(name, age, type) {
+      // 속성
+      // this: 현재 있는 객체를 가르킨다.
+      this.name = name;
+      this.age  = age;
+      this.type = type;
+      // 메소드
+      this.eat  = (food => console.log(`\'${this.name}(${this.age})\' (이)가 \'${food}\' (을)를 먹습니다.`));
+      this.agePrint  = (() => console.log(`${this.name}의 나이는 ${this.age}살 입니다.`));
+      this.typePrint = (() => console.log(`\'${this.name}(${this.age})\'의 종은 \'${this.type}\' 입니다.`));
+    };
+
+    // 객체 생성
+    // 객체를 쓰는 이유? 코드의 생산성이 높아진다.
+    // 객체가 생성되는 순간 속성에 값이 할당된다.
+    const pet  = new Pet("구름", 5, "먼치킨");    // 객체 안에 있는 걸 가져다 쓸 수 있다.
+    const pet1 = new Pet("달", 10, "페르시안");
+    const pet2 = new Pet("별", 7, "샴");
+    const pet3 = new Pet("해", 9, "벵골");
+
+    // console.log(pet .name, pet .age);
+    // console.log(pet1.name, pet1.age);
+    // console.log(pet2.name, pet2.age);
+    // console.log(pet3.name, pet3.age);
+    
+    // pet .agePrint();
+    // pet1.agePrint();
+    // pet2.agePrint();
+    // pet3.agePrint();
+    
+    // pet .eat('츄르');
+    // pet1.eat('참치캔');
+    // pet2.eat('닭가슴살');
+    // pet3.eat('사료');
+
+    pet .typePrint();
+    pet1.typePrint();
+    pet2.typePrint();
+    pet3.typePrint();
+
+
+
+
+
+
+
+// 3. prototype방식
+    // 객체 = 속성 + 메소드
+    function Pet1(name, age, type) {
+      // 속성
+      this.name = name;
+      this.age  = age;
+      this.type = type;
+    }
+
+    // 객체명
+    Pet1.prototype.eat = function(food) {
+      console.log(`\'${this.name}\' (이)가 \'${food}\' (을)를 먹습니다.`);
+    };
+
+    Pet1.prototype.agePrint = function() {
+      console.log(`${this.name}의 나이는 ${this.age}살 입니다.`);
+    };
+
+    Pet1.prototype.typePrint = function() {
+      console.log(`\'${this.name}(${this.age})\'의 종은 \'${this.type}\' 입니다.`);
+    };
+
+    // err! 스코프 밖에서 this를 인식하지 못하는듯? 버전이 달라서 안된다고 함
+    // Pet1.prototype.eat = (food => console.log(`\'${this.name}\' (이)가 \'${food}\' (을)를 먹습니다.`));
+    Pet1.prototype.typePrint1 = ((name, age, type) => console.log(`\'${name}(${age})\'의 종은 \'${type}\' 입니다.`));
+
+    
+    const pet01 = new Pet1("구름", 5, "먼치킨");
+    const pet02 = new Pet1("달", 10, "페르시안");
+    const pet03 = new Pet1("별", 7, "샴");
+    const pet04 = new Pet1("해", 9, "벵골");
+
+    pet01.typePrint1("구름", 5, "먼치킨");
+
+    pet01.eat("사료");
+    pet02.eat("사료");
+    pet03.eat("사료");
+    pet04.eat("사료");
+
+    pet01.agePrint();
+    pet02.agePrint();
+    pet03.agePrint();
+    pet04.agePrint();
+
+    pet01.typePrint();
+    pet02.typePrint();
+    pet03.typePrint();
+    pet04.typePrint();
+
+
+
+
+    
+// Number, String, Date, Math
+    
+    const f = new Number(273.555222222);
+    console.log(f.toFixed(2));    // 지정한 위치에서 반올림(소수점 없앨땐 0)
+
+    const d = new Date();
+    console.log(d);
+    console.log(d.getDay());
+
+    const bo = new Boolean(false);
+    console.log(bo);
+
+    const s = new String("안녕하세요");
+    console.log(s);
+
+    let num = 1.33333;
+    let bool = false;
+    console.log(num.toFixed(2));
+
+    // for(let i = 0; i < str,length; i++) {
+    //   console.log(str[i]);
+    // }
+
+
+    let str   = "      the,orange,test,haha           ";
+    let str1  = "this";
+    let str2  = "apple dog food";
+                 0123456
+
+    // const word = str.split(' ');           // 공백을 기준으로 잘라서 배열에 가져온다.
+    // const word = str.split();              // 통으로 배열에 가져온다.
+    // const word = str.split('');            // 한 자씩 배열에 가져온다.
+    // const word = str.split(',');           // 컴마(,)를 기준으로 잘라서 배열에 가져온다.
+    // const word = str.split(',', 2);        // 컴마(,)를 기준으로 잘라서 2개만 배열에 가져온다.
+
+    // const word = str.trim();               // 양쪽 끝의 공백을 없애준다.
+
+    // const word = str1.concat(' ', str2);   // 두 글자를 붙여준다.
+
+    // const word = str1.slice(1, 3);         // 1번째 인덱스부터 세번째 전까지 잘라줌
+
+    // const word = str2.indexOf("dog");      // 문자열이 있는 인덱스 번호(6)를 반환 없으면 -1을 출력
+
+    // if (word === -1) {
+    //   alert('찾는 문자가 없습니다.');
+    // }
+
+    // const word = str2.substring(1, 3);      // slice와 같은 기능을 한다.
+
+    // const word = str2.toLocaleUpperCase();    // 대문자로 변환시켜줌
+    // const word = str2.toLocaleLowerCase();    // 소문자로 변환시켜줌
+
+    // console.log(word);
+
+    console.log(s.toString());
+
+
+    var Today = new Date();
+    console.log(Today.getFullYear());
+    document.write('오늘은 ',Today.getFullYear(),'년 ',Today.getMonth()+1,'월 ',Today.getDate(),'일 ');
+    //                                             // getMonth는 1적게 나오기 때문에 +1 해줘야함
+    switch (Today.getDay()) {
+      case 0:
+        document.write("일요일");
+      break;
+
+      case 1:
+        document.write("월요일");
+      break;
+
+      case 2:
+        document.write("화요일");
+      break;
+      
+      case 3:
+        document.write("수요일");
+      break;
+      
+      case 4:
+        document.write("목요일");
+      break;
+
+      case 5:
+        document.write("금요일");
+      break;
+
+      case 6:
+        document.write("토요일");
+      break;
+    }
+
+    // var DDay =  new Date(1998,4,10);
+    // document.write('내 생일은 ',DDay.getFullYear(),'년 ',DDay.getMonth(),'월 ',DDay.getDate(),'일 입니다.<br>');
+
+    // // 날짜를 위처럼 지정해도 아래 set으로 변경가능
+    // DDay.setFullYear(1999);
+    // DDay.setMonth(8);
+    // document.write('내 생일은 ',DDay.getFullYear(),'년 ',DDay.getMonth(),'월 ',DDay.getDate(),'일 입니다.<br>');
+    
+
+    // const num = Math.random();
+    // console.log(num);
+
+
+    function getRandomArbitrary(min, max) {     // min부터 max사이 랜덤한 숫자를 출력함
+      return Math.random() * (max - min) + min;
+    }
+
+    let num0 = getRandomArbitrary(1, 10);
+    console.log(num.toFixed(0));                // 소수점을 잘라줌(소수점 없애려면 0)
+
+
+
+  // 배열 기반의 다중 할당
+    let [a, b] = [1, 2];
+    console.log(a, b);
+
+  // 객체 기반의 다중 할당
+    const product = {
+      name: '건조망고',   //  key: value
+      type: '당절임',     //  key: value
+      weight: 3,         //  key: value
+      arr: ['안', '녕', '하', '세', '요']
+    }
+
+    const { name, type } = product;
+    console.log(name, type);
+
+
+
+
+
+    // spread operator에서 언급된적 있음
+
+// 얕은 복사
+
+    // const obj1 = ['우유', '식빵'];
+    // const obj2 = obj1;            // 100x0 메모리에 저장되어 있는 obj1의 메모리 정보를 obj2에 넣어줌
+
+    // obj2.push("고구마");
+    // obj2.push("토마토");
+
+    // console.log(obj1);
+    // console.log(obj2);
+
+
+// 깊은 복사(배열)
+    // const obj1 = ['우유', '식빵'];
+    // const obj2 = [...obj1, '감자'];
+
+    // obj2.push("고구마");
+    // obj2.push("토마토");
+
+    // console.log(obj1);
+    // console.log(obj2);
+
+    
+
+
+// 깊은 복사(객체 데이터)
+  const product = {
+      name: '건조망고',
+      type: '당절임',
+      weight: 3,
+    }
+
+// 깊은 복사
+    const product02 = {
+      ...product
+    }
+
+    product2.date = "2022/10/11"
+
+    console.log(product)
+    console.log(product02)
+</script>
