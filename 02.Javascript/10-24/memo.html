@@ -1,3 +1,5 @@
+
+CSS설정
 <body>
   <h1 class="txt">안녕하세요</h1>
   <h1 class="txt">안녕하세요</h1>
@@ -43,7 +45,7 @@
       header.style.backgroundColor = 'black'
     });
 
-  //각각 설정하는거면 headers[n] 설정하고하 하는 n배열을 뽑아서 설정 가능
+  //각각 설정하는거면 headers[n] 설정하고자 하는 n배열을 뽑아서 설정 가능
   </script>
 </body>
 
@@ -82,7 +84,7 @@ body에 있는 태그 속성과 속성값을 부여하거나 출력하는 코드
       //  요소.setAttribute(태그의 속성명, 속성값)
 
       //  요소.getAttribute(태그의 속성명)
-      console.log(rect.getAttribute('alt'));    // console에 태그 속성명을 출력
+      console.log(rect.getAttribute('alt'));    // console에 태그 속성명을 출력 (고양이1,2))
     });
   </script>
 </body>
@@ -109,8 +111,8 @@ body에 있는 태그 속성과 속성값을 부여하거나 출력하는 코드
     const box   = document.querySelector('.box');
     const span  = document.querySelector('span');
 
-    box.appendChild(header1);             // box 클래스 안에 header1을 넣어줌
-    box.removeChild(span)                 // box 클래스 안에 span을 지워줌
+    box.appendChild(header1);                     // appendChild : box 클래스 안에 header1을 넣어줌
+    box.removeChild(span)                         // removeChild : box 클래스 안에 span을 지워줌
   </script>
 </body>
 
@@ -199,24 +201,24 @@ body에 있는 태그 속성과 속성값을 부여하거나 출력하는 코드
       h11.textContent = `클릭횟수: ${counter}`
     };
 
-    h11.addEventListener('click', listener1);
+    // h11.addEventListener('click', listener1);
     
 
 //  이벤트를 연결하면 클릭횟수 카운터가 증가하도록 만드는 이벤트
     conButton.addEventListener('click', () => {
-      if (isConnerct === false) {             // 이벤트가 현재 연결이 안된 상태
-        h11.addEventListener('click', listener1);
-        p.textContent = `이벤트 연결 상태: 연결`;
-        isConnerct = true;
+      if (isConnerct === false) {                     // 이벤트가 현재 연결이 안된 상태
+        h11.addEventListener('click', listener1);     // 연결이 false일 때 클릭하면 카운터가 올라가는 함수이벤트 호출
+        p.textContent = `이벤트 연결 상태: 연결`;       // 연결 상태 텍스트 변경
+        isConnerct = true;                            // 연결 상태 true로 변경
       }
     });
 
 //  이벤트를 연결하면 클릭횟수 카운터가 증가하는걸 막는 이벤트
     disconButton.addEventListener('click', () => {
-      if (isConnerct === true) {
-        h11.removeEventListener('click', listener1);
-        p.textContent = `이벤트 연결 상태: 해제`;
-        isConnerct = false;
+      if (isConnerct === true) {                      // 이벤트가 현재 연결이 된 상태
+        h11.removeEventListener('click', listener1);  // 연결이 true일 때 클릭하면 카운터가 올라가는 함수이벤트 삭제
+        p.textContent = `이벤트 연결 상태: 해제`;       // 연결 상태 텍스트 변경
+        isConnerct = false;                           // 연결 상태 false로 변경
       }
     });
   </script>
@@ -262,7 +264,7 @@ body에 있는 태그 속성과 속성값을 부여하거나 출력하는 코드
     // keypress: 키보드가 입력되었을 때 (아시아권 문자가 잘 안돼서 잘 안씀)
     // keydown: 키가 눌릴 때  (잘 안씀)
     textarea.addEventListener('keyup', () => {
-      const length = textarea.value.length;     // 문자열의 길이를 가져온다.
+      const length = textarea.value.length;     // textarar안의. 정보안의. 문자열의 길이를 가져온다.
       // textarea.value : textarea에 있는 내용을 가져올 수 있다.  value 입력받는 값을 지칭
       h12.textContent = `글자 수 : ${length}`;
     });
@@ -278,12 +280,12 @@ body에 있는 태그 속성과 속성값을 부여하거나 출력하는 코드
   <script>
     const input = document.querySelector('input');
     input.addEventListener('keydown', (event) => {
-      console.log(event);           // == 발생한 이벤트에 대한 정보가 들어있다.
+      console.log(event);           // == 발생한 이벤트에 대한 정보가 들어있다. (input에 대한 내용)
       console.log(event.code);      // code: 입력한 키
-      console.log(event.keyCode);   // keycode: 입력한 키를 나타내는 숫자
-      console.log(event.altKey);    // altkey: 입력한 키를 나타내는 숫자
-      console.log(event.ctrlKey);   // ctrlkey: 입력한 키를 나타내는 숫자
-      console.log(event.shiftKey);  // shiftkey: 입력한 키를 나타내는 숫자
+      console.log(event.keyCode);   // keycode: 입력한 키를 나타냄 (해당 알파벳)
+      console.log(event.altKey);    // altkey: 입력한 키를 나타냄 (true/false)
+      console.log(event.ctrlKey);   // ctrlkey: 입력한 키를 나타냄 (true/false)
+      console.log(event.shiftKey);  // shiftkey: 입력한 키를 나타냄 (true/false)
     });
   </script>
 </body>
@@ -302,17 +304,17 @@ body에 있는 태그 속성과 속성값을 부여하거나 출력하는 코드
     const p1 = document.querySelector('p');
 
     button.addEventListener('click', () => {
-      const inch = Number(input1.value);           // input창에서 입력받은 값을 가져온다.
+      const inch1 = Number(input1.value);         // input창안에. 입력받은 값을 가져온다. = inch 에 넣음
       
       // 숫자인지 문자인지 판단
-      if (isNaN(inch1)) {                          // isNaN(이건은 숫자인가): 숫자가 아닌 값이면 true
-        p1.textContent = `숫자를 입력해주세요.`;
+      if (isNaN(inch1)) {                         // isNaN(이건은 숫자인가?): 숫자가 아닌 값이면 true
+        p1.textContent = `숫자를 입력해주세요.`;    // 숫자가 아니면 text 출력
         p1.style.color = "red";
         return;                                   // 함수를 바로 종료시킴
       }
 
       const cm = inch1 * 2.54;
-      p1.textContent = `${cm}cm`;
+      p1.textContent = `${cm}cm`;                 // 계산값을 p1태그에 text로 출력
     });
   </script>
 </body>
@@ -334,9 +336,10 @@ select 박스에서 선택한 항목을 추출하게 만들어 주는 코드
     const p2 = document.querySelector('p');
 
     select.addEventListener('change', (e) => {
-      const options = e.currentTarget.options             // select박스의 옵션을 다 가져온다.
+      const options = e.currentTarget.options             // select박스의. 옵션을 다 가져와서 = options에 저장
       console.log(options)
-      const index = e.currentTarget.options.selectedIndex // select박스의 index번호를 가져온다.
+      const index = e.currentTarget.options.selectedIndex // select박스의. 옵션안의. index번호를 가져온다.
+      // const index = options.selectedIndex              // 위에서 선언한 변수 options안에. index번호를 가져온다.
       console.log(index)
       // 둘이 짝꿍
 
@@ -375,9 +378,9 @@ select 박스에서 선택한 항목을 추출하게 만들어 주는 코드
 
     radios.forEach((radio) => {
       radio.addEventListener('change', (e) => {
-        const current = e.currentTarget;                      // 현재 체크되어있는 정보를 가져온다
+        const current = e.currentTarget;                      // radio정보를 가져온다.
         if (current.checked) {                                // 체크가 되어있는지 확인
-          output.textContent = `${current.value}`             // 옵션 내용
+          output.textContent = `${current.value}`             // 체크되어있는 radio 정보의 value의 정보를 text로 출력
         }
       })
     })
@@ -388,9 +391,9 @@ select 박스에서 선택한 항목을 추출하게 만들어 주는 코드
 
     checkbox.addEventListener('change', (e) => {
       if (e.currentTarget.checked) {
-        chk_output.textContent = '체크!';
+        chk_output.textContent = '체크!';                     // checbox에 체크되어있으면 h2에 텍스트 출력
       } else {
-        chk_output.textContent = '미체크!'
+        chk_output.textContent = '미체크!';                   // checbox에 체크되어있지 않으면 h2에 텍스트 출력
       }
     })
   </script>
