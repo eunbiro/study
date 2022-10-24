@@ -17,19 +17,19 @@
     console.log(product.arr);     // 배열 1,2,3 출력
 
     //데이터 바꾸기
-    product.name = '바나나'
+    product.name = '바나나'       // name: 건조망고 > 바나나 출력
     console.log(product);
 
     // 배열 꺼내오기
     const result = product.arr[1];
-    console.log(result);
+    console.log(result);          // '안' 출력
   
     // 데이터 추가
     product.date = '2022/10/21'
-    console.log(product);
+    console.log(product);         //  2022/10/21 추가 출력
 
     // 데이터 삭제
-    delete product.weight
+    delete product.weight         // 3 제거
     console.log(product);
 
 
@@ -49,8 +49,8 @@
     }];
 
     console.log(JSON.stringify(product2));    // 객체 데이터를 문자열로 변환하여 출력
-    console.log(product2[0]);
-    console.log(product2[1]);
+    console.log(product2[0]);                 // 건조바나나 항목만 출력
+    console.log(product2[1]);                 // 건조망고 항목만 출력
 
     const product3 = '{"result": true, "count": 42}';
     const obj = JSON.parse(product3);         // 문자열을 객체 데이터로 변환하여 출력
@@ -69,7 +69,14 @@
       age   :  '3살',
       type  :  '먼치킨',
       eat   :  (food => console.log(`구름이가 \'${food}\' 을(를) 먹습니다.`)),
+      /* == :  function (food) {
+        console.log(`구름이가 \'${food}\' 을(를) 먹습니다.`)
+      }; */
       sleep :  (place => console.log(`구름이가 \'${place}\' 에서 잠을 잡니다.`))
+      /* == :  function (place) {
+        console.log(`구름이가 \'${place}\' 에서 잠을 잡니다.`)
+      };
+      */
     };
 
     console.log (`이름 : ${pet0.name}`);
@@ -79,6 +86,7 @@
     pet.sleep   (`소파`);
 
 
+    // 위에껀 : 아래껀 =
 
 
 
@@ -96,8 +104,20 @@
       this.type = type;
       // 메소드
       this.eat  = (food => console.log(`\'${this.name}(${this.age})\' (이)가 \'${food}\' (을)를 먹습니다.`));
+      /*        == function (food) {
+        console.log(`\'${this.name}(${this.age})\' (이)가 \'${food}\' (을)를 먹습니다.`)
+      };
+      */
       this.agePrint  = (() => console.log(`${this.name}의 나이는 ${this.age}살 입니다.`));
+      /*             == function () {
+        console.log(`${this.name}의 나이는 ${this.age}살 입니다.`)
+      };
+      */
       this.typePrint = (() => console.log(`\'${this.name}(${this.age})\'의 종은 \'${this.type}\' 입니다.`));
+      /*             == function () {
+        console.log(`\'${this.name}(${this.age})\'의 종은 \'${this.type}\' 입니다.`)
+      };
+      */
     };
 
     // 객체 생성
@@ -156,7 +176,7 @@
       console.log(`\'${this.name}(${this.age})\'의 종은 \'${this.type}\' 입니다.`);
     };
 
-    // err! 스코프 밖에서 this를 인식하지 못하는듯? 버전이 달라서 안된다고 함
+    // err! 스코프 밖에서 this를 인식하지 못하는듯? 버전이 달라서 안된다고 함 그걸 보완하려고 만든게 class
     // Pet1.prototype.eat = (food => console.log(`\'${this.name}\' (이)가 \'${food}\' (을)를 먹습니다.`));
     Pet1.prototype.typePrint1 = ((name, age, type) => console.log(`\'${name}(${age})\'의 종은 \'${type}\' 입니다.`));
 
@@ -191,20 +211,26 @@
     
     const f = new Number(273.555222222);
     console.log(f.toFixed(2));    // 지정한 위치에서 반올림(소수점 없앨땐 0)
+    //  273.56 출력
 
     const d = new Date();
     console.log(d);
+    // 컴퓨터상 현재 일을 출력(date)
     console.log(d.getDay());
+    // 컴퓨터상 현재 요일을 숫자로 출력 0=일요일
 
     const bo = new Boolean(false);
     console.log(bo);
+    // false를 출력
 
     const s = new String("안녕하세요");
     console.log(s);
+    // 문자 '안녕하세요' 를 출력
 
     let num = 1.33333;
     let bool = false;
     console.log(num.toFixed(2));
+    // 1.33 출력
 
     // for(let i = 0; i < str,length; i++) {
     //   console.log(str[i]);
@@ -226,7 +252,7 @@
 
     // const word = str1.concat(' ', str2);   // 두 글자를 붙여준다.
 
-    // const word = str1.slice(1, 3);         // 1번째 인덱스부터 세번째 전까지 잘라줌
+    // const word = str1.slice(1, 3);         // 1번째 인덱스부터 3번째 전까지 잘라줌
 
     // const word = str2.indexOf("dog");      // 문자열이 있는 인덱스 번호(6)를 반환 없으면 -1을 출력
 
@@ -236,16 +262,16 @@
 
     // const word = str2.substring(1, 3);      // slice와 같은 기능을 한다.
 
-    // const word = str2.toLocaleUpperCase();    // 대문자로 변환시켜줌
-    // const word = str2.toLocaleLowerCase();    // 소문자로 변환시켜줌
+    // const word = str2.toLocaleUpperCase();  // 대문자로 변환시켜줌
+    // const word = str2.toLocaleLowerCase();  // 소문자로 변환시켜줌
 
     // console.log(word);
 
-    console.log(s.toString());
+    console.log(s.toString());                // 문자열 출력
 
 
     var Today = new Date();
-    console.log(Today.getFullYear());
+    console.log(Today.getFullYear());         // 현재 연도 출력
     document.write('오늘은 ',Today.getFullYear(),'년 ',Today.getMonth()+1,'월 ',Today.getDate(),'일 ');
     //                                             // getMonth는 1적게 나오기 때문에 +1 해줘야함
     switch (Today.getDay()) {
@@ -278,7 +304,7 @@
       break;
     }
 
-    // var DDay =  new Date(1998,4,10);
+    // var DDay =  new Date(1998,4,10);     // 새로운 데이트 객체를 만들어서 날짜 입력
     // document.write('내 생일은 ',DDay.getFullYear(),'년 ',DDay.getMonth(),'월 ',DDay.getDate(),'일 입니다.<br>');
 
     // // 날짜를 위처럼 지정해도 아래 set으로 변경가능
@@ -302,7 +328,7 @@
 
   // 배열 기반의 다중 할당
     let [a, b] = [1, 2];
-    console.log(a, b);
+    console.log(a, b);    // 1, 2 출력
 
   // 객체 기반의 다중 할당
     const product = {
@@ -313,7 +339,7 @@
     }
 
     const { name, type } = product;
-    console.log(name, type);
+    console.log(name, type);    // product의 네임 타입을 넣은것으로 '건조망고' '당절임'을 출력
 
 
 
