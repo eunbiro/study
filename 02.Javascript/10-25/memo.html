@@ -1,0 +1,313 @@
+클래스 객체
+<script>
+  // 속성 + 메소드
+  class Pet {
+
+    // constructor : 생성자 함수
+    constructor(nameVal, ageVal, catVal) {
+      // 속성
+      this.name = nameVal;
+      this.age  = ageVal;
+      this.cat  = catVal;
+    }
+
+    // 메소드(함수)
+    eat (food) {
+      console.log(`${this.name}이가 ${food}(을)를 먹습니다.`);
+    };
+
+    agePrint () {
+      console.log(`${this.name}이는 ${this.age} 살 입니다.`);
+    }
+
+    typePrint () {
+      console.log(`${this.name}이는 종은 ${this.cat} 입니다.`);
+    }
+  }
+
+  const pet = new Pet("구름", 7, "코숏");
+  const pet2 = new Pet("별", 7, "먼치킨");
+  // console.log(pet.name);
+  // console.log(pet.age);
+  // console.log(pet.cat);
+
+  // console.log(pet2.name);
+  // console.log(pet2.age);
+  // console.log(pet2.cat);
+
+  pet.eat('참치캔');
+  pet.agePrint();
+  pet.typePrint();
+
+  pet2.eat('츄르');
+  pet2.agePrint();
+  pet2.typePrint();
+
+  console.log(pet);
+  console.log(pet2);
+</script>
+
+
+
+상속
+<script>
+  class Rectangle {
+    // 객체 = 속성 + 메소드
+    constructor (width, height) {
+      this.width  = width;
+      this.height = height;
+    };
+
+    // 메소드
+    // 사각형 둘레 구하기
+    getPerimerter () {
+      return 2 * (this.width + this.height);
+    };
+
+    // 사각형 넓이 구하기
+    getArea () {
+      return this.width * this.height;
+    };
+  };
+
+// 상속
+  //     자식    연결     부모
+  class Square extends Rectangle {
+    constructor (length, length2) {
+      // console.log(length, length2);
+      super(length, length2);                // super : 부모의 생성자 함수를 호출한다
+    };
+  };
+
+  // const rect = new Rectangle(10, 20);
+  // console.log(rect.getPerimerter());
+  // console.log(rect.getArea());
+
+  // 자식클래스는 부모클래스에 있는 속성과 메소드를 쓸 수 있다.
+  const square = new Square(10, 20);
+  console.log(square.width);
+  console.log(square.getPerimerter());
+  console.log(square.getArea());
+
+</script>
+
+
+
+
+class private 설정
+<script>
+  class Square1 {
+    // 속성
+    #length               // this.length를 private로 사용하겠다고 정의 (외부에서 접근 불가)
+
+    constructor (length) {
+      this.#length = length;
+    }
+
+    // 메소드
+    // 사각형 둘레 구하기
+    getPerimeter () {
+      return 4 * this.#length;
+    }
+
+    // 사각형의 넓이 구하기
+    getArea () {
+      return this.#length * this.#length;
+    }
+  }
+
+  const square1 = new Square1(10);
+  // square1.#length = -10;                        // 수정 못 함 err!
+  // console.log(`length: ${square1.#length}`);    // 볼 수 없음 err!
+  console.log(`getPerimeter(): ${square1.getPerimeter()}`);
+  console.log(`getArea(): ${square1.getArea()}`);
+</script>
+
+
+
+private을 get으로 가져오기
+<script>
+  class Square2 {
+    // 속성
+    #length               // this.length를 private로 사용하겠다고 정의 (외부에서 접근 불가)
+
+    constructor (length) {
+      this.length = length;
+    };
+
+    // get : 가져오는 함수
+    get length () {                             // 데이터 리턴
+      return this.#length;                      // constructor의 this.length를 가져와서 리턴해줌
+    };
+
+    set length (length) {                       // 데이터 세팅
+      this.#length = length;
+    };
+
+    // 메소드
+    // 사각형 둘레 구하기
+    get getPerimeter () {
+      return 4 * this.#length;
+    };
+
+    // 사각형의 넓이 구하기
+    get getArea () {
+      return this.#length * this.#length;
+    };
+  };
+
+  const square2 = new Square2(10);
+  // square2.#length = -10;                                // 수정 못 함 err!
+  console.log(`length: ${square2.length}`);                // get length를 실행
+  console.log(`getPerimeter(): ${square2.getPerimeter}`);  // () 삭제
+  console.log(`getArea(): ${square2.getArea}`);            // () 삭제
+</script>
+
+
+
+static 설정
+<script>
+  // 속성 + 메소드
+  class Pet {
+    static color = 'black';         // 정적 속성(static 속성)
+
+    // constructor : 생성자 함수
+    constructor(nameVal, ageVal, catVal) {
+      // 속성
+      this.name = nameVal;
+      this.age  = ageVal;
+      this.cat  = catVal;
+    }
+
+    // 메소드(함수)
+    eat (food) {
+      console.log(`${this.name}이가 ${food}(을)를 먹습니다.`);
+    };
+
+    agePrint () {
+      console.log(`${this.name}이는 ${this.age} 살 입니다.`);
+    };
+
+    typePrint () {
+      console.log(`${this.name}이는 종은 ${this.cat} 입니다.`);
+    };
+
+    static colorPrint () {
+      console.log(`${this.color} 입니다.`);          // 정적 메소드 (static method)
+    };
+  }
+
+  colorPrint = () => {
+    console.log(`${Pet.color} 입니다.`);
+  }
+  // ㄴ> static function : 클래스에 가깝게 포함됨, 관리가 쉬움
+  //       일반 function : 클래스에 포함되지 않음, 관리가 어려움
+
+  // const pet = new Pet("구름", 7, "코숏");
+  // const pet2 = new Pet("별", 7, "먼치킨");
+  
+  // pet.eat('참치캔');
+  // pet.agePrint();
+  // pet.typePrint();
+
+  // pet2.eat('츄르');
+  // pet2.agePrint();
+  // pet2.typePrint();
+
+  console.log(Pet.color);
+  console.log(Pet.colorPrint());                    // static 메소드는 같은 static 메소드만 접근가능
+  colorPrint()
+</script>
+
+
+static 메소드         일반 공유                     캡슐화X   Date.now()    인스턴스 생성X
+prototype 메소드      prototype에서 메모리 공유      캡슐화O   new Date()    인스턴스 생성
+non prototype 메소드  메모리 공유 안함               캡슐화O   new Date()    인스턴스 생성
+
+
+window.alert("안녕");   ==   alert("안녕");     >     윈도우는 생략 가능
+
+
+BOM
+<script>
+  var sWidth =  screen.width;
+  var sHeight =  screen.height;
+  var sColor =  screen.colorDepth;
+  console.log(sWidth);
+  console.log(sHeight);
+  console.log(sColor);
+
+var local = location.href;
+console.log(local);
+
+var NaviInfo = "User-agent header sent: " + navigator.userAgent;
+console.log(NaviInfo);
+</script>
+
+계층구조 중
+screen, location, navigator
+<script>
+  var sWidth =  screen.width;         // 화면의 width 값을 추출
+  var sHeight =  screen.height;       // 화면의 height 값을 추출
+  var sColor =  screen.colorDepth;    // 화면의 colorDepth 값을 추출
+  console.log(sWidth);
+  console.log(sHeight);
+  console.log(sColor);
+
+  var local = location.href;          // 현재주소 추출
+  console.log(local);
+
+  var NaviInfo = "User-agent header sent: " + navigator.userAgent;    // 사용자 브라우저나 OS정보 추출
+  console.log(NaviInfo);
+</script>
+
+
+페이지 이동
+<body>
+  <button onclick="loc()">이동!</button>
+  <button onclick="back()">뒤로!</button>
+  <script>
+
+    loc = () => {
+      location.href = "./test01.html";  // 페이지 이동
+    };
+
+    back = () => {
+    //history.go(2)                     // 두 페이지 앞으로
+    //history.go(-2)                    // 두 페이지 뒤로
+    //history.go(0)                     // 새로고침  == location.reload()
+      history.go(-1);                   // 뒤로 가기 == history.back()
+    };
+
+    var sWidth =  screen.width;         // 화면의 width 값을 추출
+    var sHeight =  screen.height;       // 화면의 height 값을 추출
+    var sColor =  screen.colorDepth;    // 화면의 colorDepth 값을 추출
+    console.log(sWidth);
+    console.log(sHeight);
+    console.log(sColor);
+
+    var local = location.href;          // 현재주소 추출
+    console.log(local);
+
+    var NaviInfo = "User-agent header sent: " + navigator.userAgent;    // 사용자 브라우저나 OS정보 추출
+    console.log(NaviInfo);
+</script>
+</body>
+
+
+./test01.html
+<body>
+  <button onclick="re()">새로고침</button>
+  <button onclick="back()">뒤로!</button>
+  <script>
+
+    re = () => {
+      location.reload()                 // 새로고침
+    };
+
+    back = () => {
+    //history.go(-1);                   // 뒤로 가기
+      history.back()                    // 이것도 뒤로 가기
+    };
+  </script>
+</body>

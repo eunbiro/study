@@ -1,0 +1,49 @@
+.wrap {
+  background: wheat;
+}
+
+/* 0 ~ 766px */
+
+.header__nav {
+  max-width: 1200px;
+  background: #566645;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.header__nav h1 {
+  width: 100px;
+  height: 120px;
+}
+
+.header__nav > nav {
+  width: calc(100% - 100px);
+  background: #3cffe5;
+  height: 120px;
+}
+
+.header__nav > nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;    /* 공간을 균일하게 띄움 */
+}
+
+.header__nav > .delivery-order {
+  width: 168px;
+}
+
+.footer {
+  height: 680px;
+  background: #74632c;
+}
+
+/* 테블릿: 767px 이상*/
+@media all and (min-width:767px){
+
+}
+
+/* pc: 1024px 이상 */
+@media all and (min-width:1024px){ 
+
+}

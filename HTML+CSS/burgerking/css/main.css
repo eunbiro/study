@@ -1,0 +1,105 @@
+section .con {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.slider {
+  height: 480px;
+}
+
+.slider__content {
+  background: #8f9aff;
+}
+
+.youtube {
+  height: 605px;
+  background: #f5abff;
+}
+
+.sns {
+  height: 160px;
+}
+
+.sns__content {
+  background: #ffabb9;
+}
+
+.sns__content > ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.sns__content > ul > li {
+  flex: 1;                    /* 1 : 1 : 1 로 비율을 맞춰준다 */
+  text-align: center;
+}
+
+.guide {
+  height: 480px;
+}
+
+.guide__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.guide__content > div {
+  flex: 1;
+  text-align: center;
+}
+
+.guide__content > .content__app {
+  background: #def576;
+}
+
+.guide__content > .content__delivery {
+  background: #f5d776;
+}
+
+.store {
+  height: 597px;
+}
+
+.store__content {
+  background: #4da6b6;
+}
+
+.store__content ul {
+  overflow: hidden;
+  /* 1144 / 1440 */
+  width: 79.44%;
+  margin: 0 auto;
+}
+
+.store__content ul li {
+  /* float사용 시 부모태그에 overflow: hidden; 을 줘야한다. (겹침방지) */
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+
+.banner {
+  height: 200px;
+}
+
+.banner__content {
+  background: #4fc275;
+}
+
+
+/* 테블릿: 767px 이상*/
+@media all and (min-width:767px){
+	.guide__content {
+		flex-direction: row;
+	}
+
+	.store__content ul li {
+		width: 16.66%;
+	}
+}
+
+/* pc: 1024px 이상 */
+@media all and (min-width:1024px){ 
+
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="loc()">이동!</button>
+  <button onclick="back()">뒤로!</button>
+  <script>
+
+    loc = () => {
+      location.href = "./test01.html";  // 페이지 이동
+    };
+
+    back = () => {
+    //history.go(2)                     // 두 페이지 앞으로
+    //history.go(-2)                    // 두 페이지 뒤로
+    //history.go(0)                     // 새로고침  == location.reload()
+      history.go(-1);                   // 뒤로 가기 == history.back()
+    };
+
+    var sWidth =  screen.width;         // 화면의 width 값을 추출
+    var sHeight =  screen.height;       // 화면의 height 값을 추출
+    var sColor =  screen.colorDepth;    // 화면의 colorDepth 값을 추출
+    console.log(sWidth);
+    console.log(sHeight);
+    console.log(sColor);
+
+    var local = location.href;          // 현재주소 추출
+    console.log(local);
+
+    var NaviInfo = "User-agent header sent: " + navigator.userAgent;    // 사용자 브라우저나 OS정보 추출
+    console.log(NaviInfo);
+</script>
+</body>
+</html>

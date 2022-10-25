@@ -25,22 +25,22 @@
       function calculate () {
         // 계산결과를 보여준다.
         // 소수점 두자리까지만 출력
-        span.textContent = (currentVal * transVal).toFixed(2);
+        span.textContent = (currentVal * transVal).toFixed(2);  // 아래에서 추출해서 저장한 변수들로 계산
       };
 
       select.addEventListener('change', (e) => {
-        const options = e.currentTarget.options;
-        const index = e.currentTarget.options.selectedIndex;
-        transVal = options[index].value;
-        calculate();
+        const options = e.currentTarget.options;                // 셀렉트 안에 가져온다.옵션을
+        const index = e.currentTarget.options.selectedIndex;    // 셀렉트 안에 가져온다.옵션의.인덱스를
+        transVal = options[index].value;                        // 옵션[인덱스]의.value값을 가져와 변수저장
+        calculate();                                            // 상단 calculate함수 소환
       });
 
       input.addEventListener('keyup', (e) => {
         // 입력받은 값을 가져온다.
         // 계산한다.
-        currentVal = e.currentTarget.value;
+        currentVal = e.currentTarget.value;                     // 인풋 안에 가져온다.value값을
         console.log(currentVal);
-        calculate();
+        calculate();                                            // 상단 calculate함수 소환
       });
     </script>
 </body>
