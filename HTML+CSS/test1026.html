@@ -15,43 +15,70 @@
             height: 100%;
         }
 
+        ul li {
+            list-style-type:none;
+
+        }
+
         .wrap {
-            max-width: 1024px;
+            margin: 0 auto;
+            max-width: 1140px;
+            height: 1000px;
             background: rgb(160, 160, 160);
         }
 
         .select {
-            height: 700px;
             text-align: center;
+            padding: 20px;
+        }
+
+        .select h2 {
+            margin: 10px;
         }
 
         .select__random {
             border: 1px solid #222;
+            margin: 10px;
             padding: 10px;
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
 
         .select__rfood {
+            margin: 0 auto;
             width: 500px;
             height: 400px;
         }
 
-        .food__list {
+        .food__list ul {
             display: flex;
+            flex-direction: row;
             justify-content: space-around;
+            align-items: center;
             text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
             padding: 10px;
+            
+
+        }
+
+        .img_box {
+            padding: 20px;
+        }
+
+        .food__list ul img:hover{
+            opacity: 1;
+            border: 10px solid #222;
 
         }
 
         .food__list ul li {
-            opacity: 80%;
-            width: 250px;
-            height: 200px;
+            width: 200px;
+            opacity: 0.4;
         }
 
-        .food__list a:hover {
-            opacity: 100%;
+        .food__list ul .bo {
+            opacity: 1;
         }
     </style>
 </head>
@@ -60,13 +87,15 @@
         <div class="select">
             <button class="select__random">랜덤 선택</button>
             <h2>오늘의 메뉴 : 케이크</h2>
-            <div class="select__rfood"></div>
+            <div class="select__rfood">
+                <img src="./images/bg01.jpg" class="foodimg" alt="food1">
+            </div>
         </div>
         <div class="container food__list">
             <ul class="img_box">
                 <li>
                     <a href="#">
-                        <img src="./images/bg01.jpg" class="foodimg" alt="food1">
+                        <img src="./images/bg01.jpg" class="foodimg bo" alt="food1">
                     </a>
                 </li>
                 <li>
