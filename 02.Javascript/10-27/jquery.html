@@ -1,0 +1,454 @@
+<body>
+  <h1 id="title" class="title title2">제목</h1>
+  <h1 id="title2" class="title title2">제목</h1>
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      $("#title, #title2").css("color", "red");
+    });
+  </script>
+</body>
+
+
+<body>
+  <ul id="wrap">
+    <li id="list_1">
+      <span class="child1">1번</span>
+      <span>2번</span>
+      <span class="child3">3번</span>
+      <span>4번</span>
+      <span class="child5">5번</span>
+    </li>
+    <li id="list_2">리스트2</li>
+    <li id="list_3">리스트3</li>
+  </ul>
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      //parent() 바로 위 부모, parents() 모든 부모
+      $('#list_1').parent().css("border", "1px solid red")                // list_1의 부모에 css설정
+      $('#list_1').children().css("border", "1px solid red")              // list_1의 자식에 css설정
+      $('#list_1').children('.child').css("border", "1px solid blue")     // list_1의 자식중 child에게 css설정
+
+      
+      $(".child2").prev().css("border", "1px solid red")                  // child2의 전 항목에 css설정
+      $(".child2").next().css("border", "1px solid blue")                 // child2의 다음 항목에 css설정
+
+      $(".child2").siblings().css("border", "1px solid red")              // child2의 형제에 css설정
+
+      $(".child3").prevUntil(".child1").css("border", "1px solid red")    // child3 이전에 child1 사이에 있는 형제에 css설정
+      $(".child3").nextUntil(".child5").css("border", "1px solid blue")   // child3 이후에 child5 사이에 있는 형제에 css설정
+
+      $(".child3").closest(".list_1").css("border", "1px solid red")      // 가장 가까운 상위 요소
+    });
+  </script>
+</body>
+
+
+<body>
+  <ul class="wrap">
+    <li class="list_1">
+      <span class="child1">1번</span>
+      <span>2번</span>
+      <span class="child3">3번</span>
+      <span>4번</span>
+      <span class="child5">5번</span>
+    </li>
+    <li class="list_2">리스트2</li>
+    <li class="list_3">리스트3</li>
+  </ul>
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+
+      $(".child3").closest(".list_1").css("border", "1px solid red")      // 가장 가까운 상위 요소
+
+      $(".wrap li:first").css("border", "1px solid red")                  // wrap 안에 첫번째 li에 css 설정
+      $(".wrap li:last").css("border", "1px solid blue")                  // wrap 안에 마지막 li에 css 설정
+
+      $(".wrap li:odd").css("border", "1px solid red")                    // wrap 안에 홀수 li에 css 설정
+      $(".wrap li:even").css("border", "1px solid red")                   // wrap 안에 짝수 li에 css 설정
+
+      $(".list_1 span:lt(2)").css("border", "1px solid red")              // list_1 안 span에 상위2개 css 설정
+      $(".list_1 span:gt(2)").css("border", "1px solid blue")             // list_1 안 span에 하위2개 css 설정
+
+      $(".list_1 span:first-of-type").css("border", "1px solid red")      // list_1 안 span에 첫번째 같은타입 css 설정
+      $(".list_1 span:last-of-type").css("border", "1px solid blue")      // list_1 안 span에 마지막 같은타입 css 설정
+
+      //nth-child는 index번호가 아님 (2n) : 짝수 (2n-1) : 홀수
+      $(".list_1 span:nth-child(3)").css("border", "1px solid red")       // list_1 안 span에 세번째 자식 css 설정
+
+      $(".list_1 span").slice(1,3).css("border", "1px solid red")         // list_1 안 span에 첫번째에서 세번째 앞쪽까지 잘라서 css 설정
+    });
+  </script>
+</body>
+
+
+<body>
+  <ul class="wrap">
+    <li class="list_1">리스트1</li>
+    <li class="list_2">리스트2</li>
+    <li class="list_3">리스트3</li>
+  </ul>
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      var obj = [
+        {
+          area: "서울",
+          name: "라이언"
+        },{
+          area: "인천",
+          name: "어피치"
+        },{
+          area: "부산",
+          name: "죠르디"
+        }
+      ]
+
+      var idxNum1 = $('li').index($('.list_2'))   // li에서 list_2 요소를 찾는다. > 찾으면 index번호 출력
+        console.log(idxNum1)
+
+      var names = ["김부장", "정부장", "이부장"]
+
+      var idxNum = $.inArray("정부장", names)     // (이게있냐, 이배열안에) > 있는지 찾아서 index번호를 출력함
+
+      var arr2 = $.grep(obj, (val, idx) => {
+        if (val.area === "서울") {                // 가져온 값이 true면 현재 데이터를 내보내줌(필터)
+          return true
+        } else {
+          return false
+        }
+      });
+
+      var arr1 = $.map(obj, (val, idx) => {       // 내보내준 데이터를 배열로 만듬 (결과값을 배열로 포장)
+        if (val.area === "서울") {
+          return val;
+        }
+      });
+
+      console.log(idxNum)
+      console.log(arr1)
+      console.log(arr2)
+      console.log($.isArray(names))               // 이건 배열이냐? consol > true 출력
+      
+      $(obj).each((idx, val) => {
+        console.log(idx, val);
+      });
+
+      $('.list li').each((idx, val) => {
+        console.log(idx, val);
+      });
+    });
+  </script>
+</body>
+
+
+
+체크된 값을 가져올 수 있다
+<script>
+	$(function(){
+		$("#wrap p:hidden").css({
+				"display":"block",
+				"background":"#ff0"
+		});
+
+		var z1 = $("#zone1 :selected").val();
+		console.log(z1);
+		
+		var z2 = $("#zone2 :checked").val();
+		console.log(z2);
+
+		var z3 = $("#zone3 :checked").val();
+		console.log(z3);
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p>내용1</p>
+		<p style="display:none">내용2</p>
+		<p>내용3</p>
+	</div>
+	<form action="#">
+		<p id="zone1">
+		<select name="course" id="course">
+				<option value="opt1">옵션1</option>
+				<option value="opt2" selected>옵션2</option>
+				<option value="opt3">옵션3</option>
+		</select>
+		</p>
+		<p id="zone2">
+				<input type="checkbox" name="hobby1" value="독서"> 독서
+				<input type="checkbox" name="hobby2" value="자전거"> 자전거
+				<input type="checkbox" name="hobby3" value="등산" checked> 등산
+		</p>
+		<p id="zone3">
+				<input type="radio" name="gender" value="male"> 남성
+				<input type="radio" name="gender" value="female" checked> 여성
+		</p>
+	</form>
+</body>
+
+
+
+속성 탐색 선택자
+<body>
+  <a href="#" target="_blank">이동</a>
+  <a href="https://www.naver.com/" target="_blank">이동</a>
+  <form action="#" id="member_f">
+    <input type="text" name="user_id" id="user_id">
+    <input type="password" name="user_pwd" id="user_pwd">
+  </form>
+
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      // 속성 탐색 선택자
+      $('a[target]').css("border", "1px solid red")         // a에 target이 있는 요소에 css적용
+      $('a[href^=https]').css("border", "1px solid blue")   // a에 href에 https가 있는 요소에 css적용
+
+      $('#member_f :text').css({
+        "background-color":"blue",
+        "height":"200px"
+      })
+
+      $('#member_f :password').css({
+        "background-color":"yellow",
+      })
+    });
+  </script>
+</body>
+
+
+
+
+<body>
+  <div id="outer_wrap">
+    <h1>콘텐츠 탐색 선택자</h1>
+    <section id="inner1">
+      <h1>이너1</h1>
+      <p class="test"><span>내용1</span></p>
+      <p><span>내용2</span></p>
+      <p><span>내용3</span></p>
+    </section>
+    <section id="inner2">
+      <h1>이너2</h1>
+      <p><span>내용4</span></p>
+      <p><span>내용5</span></p>
+      <p class="test2" style="display: block;"><span>내용6</span></p>
+    </section>
+  </div>
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      $("#inner1 p:contains(내용1)").css({"background-color":"#ff0"});  // inner1의 p중 내용1을 가지고 있는 태그에 css적용
+      $("#inner1 p:has(span)").css({"background-color":"red"});         // inner1의 span태그를 가지고있는 태그에 css적용
+      $("#outer_wrap").contents().css({"background-color":"red"});      // wrap에 모든 컨텐츠 css적용
+      $("#inner2 p").not(":first").css({"background-color":"red"});     // inner2의 첫번째 태그가 아닌 태그에 css적용
+      $("#inner1").find(".test").css({"background-color":"red"});       // inner1의 test태그를 찾아 css적용
+      console.log($(".test2").is(":visible"))                           // test2가 보이냐?
+      
+
+      var result_3 = $("#chk1").is(":checked");   // select는 checked 대신 selected
+        console.log(result_3);
+
+        var result_4 = $("#chk2").is(":checked");
+        console.log(result_4);
+    });
+  </script>
+</body>
+
+
+
+<body>
+  <ul class="wrap">
+    <li class="list_1">
+      <span class="child1">1번</span>
+      <span>2번</span>
+      <span class="child3">3번</span>
+      <span>4번</span>
+      <span class="child5">5번</span>
+    </li>
+    <li class="list_2">리스트2</li>
+    <li class="list_3">리스트3</li>
+  </ul>
+  <a href="https://www.naver.com/" target="_blank"></a>
+  <p class="green">안녕하세요</p>
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      // $("p").addClass("aqua");             // p에 aqua class 지정
+      // $("p").removeClass("red");           // p에 red class 삭제
+      // $("p").toggleClass("green");         // p에 green class 추가(없으면 있게하고 있으면 없게함)
+      console.log($("p").hasClass("green")) // 해당 class를 가지고 있으면 true 아니면 false
+
+
+      // var result1 = $(".list_1").html();
+      // console.log(result1);
+      // $(".list_1").html("<a href='#'>클릭</a>"); // 링크로 바꿔서 출력
+
+      // var result1 = $(".list_1").text();
+      // console.log(result1);
+      // $(".list_1").text("<a href='#'>클릭</a>"); // text로 바꿔서 출력
+
+      // console.log($("a").attr("href"))           // a안의 href 속성을 가져온다.
+      // console.log($("a").attr("target"))         // a안의 target 속성을 가져온다.
+      
+      // console.log($("a").attr("href"))
+      // $("a").attr("href", "https://www.w3schools.com/")    // a에 링크 변경
+      // $("a").attr({
+      //   "href" : "https://www.w3schools.com/",             // a에 링크 변경
+      //   "target" : "_parent"                               // a에 타겟 변경
+      // })
+
+      // $("a").remove("target");                             // a에 타켓 제거
+
+    })
+  </script>
+</body>
+
+
+
+
+<body>
+  <div id="wrap">
+    <h1>제목</h1>
+    <p>내용1</p>
+    <p>내용2</p>
+    <p>내용3</p>
+  </div>
+  <div id="wrap2">
+    <h1>제목</h1>
+  </div>
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      // $("h1").replaceWith("<h3>헤더바꿈</h3>")         // h1 요소를 h3로 바꿈
+      // 위치만 다를뿐 같은 결과를 출력
+      // $("<h3>헤더바꿈</h3>").replaceAll("h1")          // h1 요소를 h3로 바꿈
+
+
+
+      // console.log($("#wrap").children().clone())      // 자식태그의.복사
+      // var copy = $("#wrap").children().clone()        // 자식태그의.복사
+      // $("#wrap2").append(copy)
+
+      // $("#wrap").remove()                             // 다 지움
+      // $("#wrap").empty()                              // 하위 요소만 지움
+      
+
+      // $("#wrap p:eq(2)").after("<p>After</p>");       // p태그에 2번 뒤에 내용추가
+      // $("#wrap p:eq(1)").before("<p>Before</p>");     // p태그에 1번 앞에 내용추가
+
+      // 위치만 다를뿐 같은 결과를 출력
+      // $("<p>After</p>").insertAfter("#wrap p:eq(2)");
+      // $("<p>Before</p>").insertBefore("#wrap p:eq(1)");
+
+      // $("#wrap").append("<p>배고파</p>")                // wrap 안에 맨 뒤에 추가해줌
+      // $("#wrap").prepend("<p>배고파</p>")               // wrap 안에 맨 앞에 추가해줌
+
+      // 위치만 다를뿐 같은 결과를 출력
+      // $("<p>배고파</p>").appendTo("#wrap")
+      // $("<p>배고파</p>").prependTo("#wrap")
+    })
+  </script>
+</body>
+
+
+
+
+<body>
+  <h1>
+    <strong>객체 조작</strong>
+  </h1>
+
+  <p class="ct1">내용1</p>
+  <p class="ct1">내용2</p>
+  <p class="ct2">내용3</p>
+  <p class="ct2">내용4</p>
+
+  <ul>
+    <li>내용5</li>
+    <li>내용6</li>
+  </ul>
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      $("strong").unwrap();             // 해당태그를 감싸고 있는 부모태그를 벗겨줌
+      $(".ct1").wrap("<div />")         // 해당 클래스를 가지고 있는 태그를 작성태그로 각각 감싸줌
+      $(".ct2").wrapAll("<div />")      // 해당 클래스를 가지고 있는 태그를 작성태그로 한꺼번에 감싸줌
+      $("li").wrapInner("<h3 />")       // li 내부에 있는 h3로 감싸줌
+    })
+  </script>
+</body>
+
+
+
+이벤트
+<body>
+  <p>
+    <button class="btn1">버튼1</button>
+  </p>
+  <p>내용1</p>
+  <p>
+    <button class="btn2">버튼2</button>
+  </p>
+  <p>내용2</p>
+
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      $(".btn1").click(() => {    // 이벤트 정보를 여러개 작성할 때
+        $(".btn1").parent().next().css({"color":"red"})
+      });
+
+      $(".btn2").on({             // 이벤트 정보를 여러개 작성할 때
+        // "key":"value"
+        "mouseover focus" : () => {
+          $(".btn2").parent().next().css({"color":"red"})
+        },
+        "mouseout blur" : () => {
+          $(".btn2").parent().next().css({"color":"black"})
+        }
+      });
+
+      $(".btn1").off("click")     // 이벤트 제거
+      $(".btn2").off("nouseover focus")
+    });
+  </script>
+</body>
+
+
+
+라이브 이벤트
+<body>
+  <div id="wrap">
+    <p>
+      <button class="btn1">버튼1</button>
+    </p>
+    <p class="btn_test">
+      <button class="btn2">버튼2</button>
+    </p>
+  </div>
+  <script src="./jquery-3.6.1.min.js"></script>
+  <script>
+    $(() => {
+      
+      $(".btn1.on").on("mouseover focus", () => {
+        alert("hi!")
+      })
+      
+      $(".btn1").addClass("on")
+
+      // 라이브 이벤트 방식
+      // 상위 태그나 document
+      $(".btn_test").on("mouseover focus", ".btn2.on", () => {
+        alert("안녕")
+      })
+
+      $(".btn2").addClass("on")
+
+    });
+  </script>
+</body>
