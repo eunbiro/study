@@ -88,7 +88,8 @@
             <button class="select__random">랜덤 선택</button>
             <h2>오늘의 메뉴 : 케이크</h2>
             <div class="select__rfood">
-                <img src="./images/bg01.jpg" class="foodimg" alt="food1">
+                <img class="food_img" alt="food">
+                <!-- <img src="./images/bg01.jpg" class="food_img" alt="food"> -->
             </div>
         </div>
         <div class="container food__list">
@@ -120,20 +121,21 @@
     <script>
         const button = document.querySelector('.select__random');
         const foods = document.querySelectorAll('.foodimg');
+        const foodSelect = document.querySelector('.food_img');
+        const box   = document.querySelector('.select__rfood');
         getRandomArbitrary = (min, max) => { return Math.random() * (max - min) + min};
 
 
         button.addEventListener('click', () => {
             let num = getRandomArbitrary(1, 3).toFixed(0);
-
-            const img = `./images/bg0${num}.jpg`;
-            button.setAttribute('img', img);
+            
+            const src = `./images/bg0${num}.jpg`;
+            foodSelect.setAttribute('src', src);
 
             const food = foods[num];
-            food.style.border = '10px';
+            // box.appendChild(food);
+            // food.style.border = '10px';
         });
-
-
 
        
     

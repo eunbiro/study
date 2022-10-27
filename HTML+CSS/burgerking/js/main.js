@@ -12,6 +12,6 @@ var swiper = new Swiper(".mySwiper", {
   speed: 800
 });
 
-swiper.on('slideChange', () => {
-  console.log("안녕하세요")
-});
+// swiper.on('slideChange', () => {
+//   console.log("안녕하세요")
+// });
