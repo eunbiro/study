@@ -1,0 +1,44 @@
+
+promise
+<script>
+  const promise1 = new Promise((resolve, reject) => {
+    resolve('success')
+  })
+  // 약속함.그리고.결과줌
+  promise1.then((result) => {
+    console.log(result)
+  })
+</script>
+
+fetch
+<script>
+  var url = "https://api.openweathermap.org/data/2.5/weather?"
+  url += "appid=3acc923569974a5525ca6628faa9b6e0"
+  url += "&units=metric"
+  url += "&lang=kr"
+  url += "&q=seoul"
+
+  const getData = url => fetch(url)       // fetch는 promise를 반환한다.
+
+  getData(url).then(data =>
+    data.json()
+  ).then(
+    result => console.log(result)
+  )
+  
+</script>
+
+async_await
+<script>
+  async function asyncFunc() {
+    let promise = new Promise((resolve, reject) => {
+      setTimeout(() => {resolve("완료")}, 2000)
+    })
+
+    let result = await promise      // 이 밑에 있는 애들은 promise가 끝날 때까지 실행이 안됨
+
+    alert(result);
+  }
+
+  asyncFunc()
+</script>
