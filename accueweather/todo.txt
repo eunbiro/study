@@ -1,0 +1,8 @@
+2. 웹접근성 수정
+
+
+https://api.openweathermap.org/data/2.5/weather?
+appid=3acc923569974a5525ca6628faa9b6e0
+&units=metric
+&lang=kr
+&q=seoul
