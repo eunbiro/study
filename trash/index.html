@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="./library/fontawesome-free-6.2.0-web/css/all.min.css">
+  <!-- 애니메이트 -->
+  <link rel="stylesheet" href="./library/animate/animate.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <!-- 슬라이더 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+</head>
+<body>
+  <header class="header">
+    
+    <div class="header__nav">
+      <h1>
+        <a href="./index.html">
+          <img src="./img/Marvel_Logo.png" alt="logo" class="logo">
+        </a>
+      </h1>
+      <div class="menu">
+        <nav>
+          <ul class="menu__main">
+            <li class="main__list">
+              <a href="#">UNIVERSE</a>
+              <div>
+                <ul class="list__drop animate__animated animate__fadeIn">
+                  <li><a href="#">WORLDVIEW</a></li>
+                  <li><a href="#">CINEMATIC</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="main__list">
+              <a href="#">CHARACTERS</a>
+              <div>
+                <ul class="list__drop animate__animated animate__fadeIn">
+                  <li><a href="#">ALL CHARACTERS</a></li>
+                  <li><a href="#">TEAMS & GROUPS</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="main__list">
+              <a href="#">NEWS</a>
+              <div>
+                <ul class="list__drop animate__animated animate__fadeIn">
+                  <li><a href="#">NEWS</a></li>
+                  <li><a href="#">EVNET</a></li>
+                  <li><a href="#">STORE</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="main__list">
+              <a href="#">MOVIES</i></a>
+              <div>
+                <ul class="list__drop animate__animated animate__fadeIn">
+                  <li><a href="#">POSTER</a></li>
+                  <li><a href="#">MOVIE CLIP</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu__login">
+        <button class="button">
+          SIGN IN | JOIN
+        </button>
+      </div>
+    </div>
+    <div class="header__panel"></div>
+  </header>
+  
+  <main class="wrap">
+    <!-- 업다운버튼 -->
+    <div class="sub__button">
+      <div class="fixed__button">
+        <a class="button__up" href="#">up</a>
+      </div>
+      <div class="fixed__button">
+        <a class="button__down" href="#">down</a>
+      </div>
+    </div>
+
+    <section class="slider">
+      <div class="slider__content con">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide slide1"></div>
+            <div class="swiper-slide slide2"></div>
+            <div class="swiper-slide slide3"></div>
+          </div>
+          <!-- navigation 버튼 -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- pagination 버튼 -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section class="youtube">
+      <div class="youtube__content con">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ku9l1fHo5XE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+    <section class="soon">
+      <h3>COMING SOON</h3>
+      <div class="soon__content con">
+        <div class="soon__poster1 over">
+          <div class="ov_poster"><img src="./img/soonMovie_1.jpg" alt="soon1"></div>
+          <div class="ov_text">
+            <p>Ant-Man and The Wasp: Quantumania</p>
+            <b>DIRECTOR</b>
+            <p>Peyton Reed</p>
+            <b>CAST</b>
+            <p>Paul Rudd, Evangeline Lilly, Michael Douglas, Michelle Pfeiffer, Kathryn Newton and Jonathan Majors</p>
+            <b>RELEASE DATE</b>
+            <p>February 17, 2023</p>
+          </div>
+        </div>
+        <div class="soon__poster2 over">
+          <div class="ov_poster"><img src="./img/soonMovie_2.jpg" alt="soon2"></div>
+          <div class="ov_text">
+            <p>Black Panther: Wakanda Forever</p>
+            <b>DIRECTOR</b>
+            <p>Ryan Coogler</p>
+            <b>CAST</b>
+            <p>Angela Bassett, Letitia Wright, Winston Duke, Danai Gurira, Florence Kasumba, Lupita Nyong’o, Martin Freeman, Tenoch Huerta, Dominique Thorne, Michaela Coel, Mabel Cadena and Alex Livanalli</p>
+            <b>RELEASE DATE</b>
+            <p>November 11, 2022</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="poster">
+      <h3>MOVIE POSTER</h3>
+      <div class="poster__content con">
+        <div class="poster1"></div>
+        <div class="poster2"></div>
+        <div class="poster3"></div>
+        <div class="poster4"></div>
+      </div>
+    </section>
+    <section class="store">
+      <h3>STORE</h3>
+      <div class="store__content con">
+          <ul>
+            <li><img src="./img/goods_1.jpg" alt="goods1"></li>
+            <li><img src="./img/goods_2.jpg" alt="goods2"></li>
+            <li><img src="./img/goods_3.jpg" alt="goods3"></li>
+            <li><img src="./img/goods_4.jpg" alt="goods4"></li>
+            <li><img src="./img/goods_5.jpg" alt="goods5"></li>
+            <li><img src="./img/goods_6.jpg" alt="goods6"></li>
+          </ul>
+      </div>
+    </section>
+    <section class="banner">
+      <div class="banner__content con">배너?</div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__level1"></div>
+  </footer>
+  <script src="./js/jquery-3.6.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <script src="./js/common.js"></script>
+</body>
+</html>
