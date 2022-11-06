@@ -9,8 +9,11 @@
 #### 기간 :&nbsp; 22.10.21 ~ 22.11.07
 <br /><br />
 
-#### 팀원 : <br />
+#### 조장 : <br />
+
 노은비&nbsp;&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/eunbiro)<br />
+
+#### 팀원 : <br />
 조욱진&nbsp;&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/Ukzi)<br />
 권수경&nbsp;&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/rosencrantz96)<br />
 김정환&nbsp;&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/andy981217)<br />
@@ -49,6 +52,7 @@
 10월 31일　　　　git server 첫 콜라보<br />
 10월 26 ~ 03일　&nbsp;&nbsp;각자 페이지 개발<br />
 11월 04일　　　　각 페이지 링크연결<br />
+11월 07일　　　　프로젝트 제출<br />
 
 <br /><br />
 
