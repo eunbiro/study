@@ -10,11 +10,11 @@
 <br /><br />
 
 #### 팀원 : <br />
-노은비&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/eunbiro)<br />
-조욱진&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/Ukzi)<br />
-권수경&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/rosencrantz96)<br />
-김정환&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/andy981217)<br />
-신초아&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/chdk0842)<br />
+노은비&nbsp;&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/eunbiro)<br />
+조욱진&nbsp;&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/Ukzi)<br />
+권수경&nbsp;&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/rosencrantz96)<br />
+김정환&nbsp;&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/andy981217)<br />
+신초아&nbsp;&nbsp; [<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">](https://github.com/chdk0842)<br />
 
 <br /><br />
 
@@ -44,11 +44,11 @@
 
 ## 개발 과정 : <br />
 10월 21~24일 &nbsp;개발사이트 탐색<br />
-10월 ~ 24일 &nbsp;개발페이지 분담<br />
-10월 ~ 26일 &nbsp;스토리 보드 작성<br />
+10월 ~ 24일 &nbsp;&nbsp;개발페이지 분담<br />
+10월 ~ 26일 &nbsp;&nbsp;스토리 보드 작성<br />
 10월 31일 &nbsp;&nbsp;git server 첫 콜라보<br />
-10월 26일 ~ &nbsp;&nbsp;11월 03일 각자 페이지 개발<br />
-11월 04일 &nbsp;&nbsp;각 페이지 링크연결<br />
+10월 26일 ~ 11월 03일 각자 페이지 개발<br />
+11월 04일 &nbsp;&nbsp;&nbsp;각 페이지 링크연결<br />
 
 <br /><br />
 
