@@ -43,12 +43,12 @@
 <br /><br />
 
 ## 개발 과정 : <br />
-10월 21 ~ 24일 &nbsp;개발사이트 탐색<br />
-10월 ~ 24일 &nbsp;&nbsp;&nbsp;&nbsp;개발페이지 분담<br />
-10월 ~ 26일 &nbsp;&nbsp;&nbsp;&nbsp;스토리 보드 작성<br />
-10월 31일 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git server 첫 콜라보<br />
+10월 21 ~ 24일 &nbsp; 개발사이트 탐색<br />
+10월 ~ 24일 &nbsp;&nbsp;&nbsp;&nbsp; 개발페이지 분담<br />
+10월 ~ 26일 &nbsp;&nbsp;&nbsp;&nbsp; 스토리 보드 작성<br />
+10월 31일 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; git server 첫 콜라보<br />
 10월 26일 ~ 11월 03일 각자 페이지 개발<br />
-11월 04일 &nbsp;&nbsp;&nbsp;&nbsp;각 페이지 링크연결<br />
+11월 04일 각 페이지 링크연결<br />
 
 <br /><br />
 
